@@ -3,12 +3,9 @@ export default async function handler(req, res) {
   try {
     const { url, segment } = req.query;
 
-    // If no URL provided
-    if (!url) {
-      return res.status(400).send("Missing 'url' query parameter");
-    }
+    // Validate URL
+    if (!url) return res.status(400).send("Missing 'url' query parameter");
 
-    // Fetch remote content
     const fetchResponse = await fetch(url);
     if (!fetchResponse.ok) throw new Error("Failed to fetch URL");
 
@@ -24,12 +21,15 @@ export default async function handler(req, res) {
     const lines = text.split("\n");
     const newLines = [];
 
-    // Detect master playlist (#EXT-X-STREAM-INF)
+    // Base API URL for rewriting
+    const API_BASE = `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/stream`;
+
     if (text.includes("#EXT-X-STREAM-INF")) {
+      // Master playlist: rewrite nested index.m3u8 URLs
       for (const line of lines) {
-        if (line.startsWith("http") && line.endsWith("index.m3u8")) {
-          // Rewrite nested index URLs to local Vercel endpoint
-          newLines.push(`/api/stream?url=${encodeURIComponent(line)}`);
+        if (line.endsWith("index.m3u8")) {
+          const fullUrl = line.startsWith("http") ? line : new URL(line, url).href;
+          newLines.push(`${API_BASE}?url=${encodeURIComponent(fullUrl)}`);
         } else {
           newLines.push(line);
         }
@@ -37,11 +37,11 @@ export default async function handler(req, res) {
       res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
       return res.status(200).send(newLines.join("\n"));
     } else {
-      // Index playlist: rewrite segments (.html → .ts)
+      // Index playlist: rewrite segments (.html → TS)
       for (const line of lines) {
         if (line.startsWith("http")) {
-          const localPath = `/api/stream?url=${encodeURIComponent(line)}&segment=1`;
-          newLines.push(localPath);
+          const fullUrl = line;
+          newLines.push(`${API_BASE}?url=${encodeURIComponent(fullUrl)}&segment=1`);
         } else {
           newLines.push(line);
         }
