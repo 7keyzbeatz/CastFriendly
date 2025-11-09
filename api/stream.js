@@ -1,72 +1,84 @@
-import fetch from "node-fetch";
+export const config = {
+  runtime: "edge", // Use Edge Runtime (Vercel) - no npm modules needed
+};
 
-// Helper: fetch remote text
-async function fetchText(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-  return res.text();
-}
-
-// Helper: fetch remote bytes
-async function fetchBytes(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
-}
-
-export default async function handler(req, res) {
+export default async function handler(req) {
   try {
-    const remoteUrl = req.query.url;
-    if (!remoteUrl) return res.status(400).send("Missing url parameter");
+    const { searchParams } = new URL(req.url);
+    const masterUrl = searchParams.get("url");
 
-    // Handle master playlist
-    if (remoteUrl.endsWith("master.m3u8")) {
-      const masterContent = await fetchText(remoteUrl);
-      const lines = masterContent.split("\n");
-      const newLines = lines.map(line => {
-        if (line.startsWith("/pl/")) {
-          // Convert relative index paths to full API URLs
-          const fullIndexUrl = new URL(
-            line,
-            remoteUrl.replace(/master\.m3u8$/, "")
-          ).href;
-          return `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/stream?url=${encodeURIComponent(fullIndexUrl)}`;
-        }
-        return line;
+    if (!masterUrl) {
+      return new Response("Missing url parameter", { status: 400 });
+    }
+
+    // Helper to fetch text content
+    async function fetchText(url) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+      return await res.text();
+    }
+
+    // Parse path from request
+    const pathname = new URL(req.url).pathname;
+
+    // Serve master playlist
+    if (pathname.endsWith("/master.m3u8")) {
+      let content = await fetchText(masterUrl);
+      // Rewrite nested index URLs to local paths
+      content = content
+        .split("\n")
+        .map(line => (line.startsWith("/pl/") ? line : line))
+        .join("\n");
+
+      return new Response(content, {
+        status: 200,
+        headers: { "Content-Type": "application/vnd.apple.mpegurl" },
       });
-      res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      return res.send(newLines.join("\n"));
     }
 
-    // Handle nested index playlists
-    if (remoteUrl.endsWith("index.m3u8")) {
-      const indexContent = await fetchText(remoteUrl);
-      const lines = indexContent.split("\n");
-      const newLines = lines.map(line => {
-        if (line.startsWith("http")) {
-          // Rewrite HTML segments to local .ts API paths
-          const localPath = line.replace("https://", "").replace(/\//g, "_") + ".ts";
-          return `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/stream?segment=${encodeURIComponent(localPath)}`;
-        }
-        return line;
+    // Serve index playlists
+    if (pathname.startsWith("/pl/") && pathname.endsWith("/index.m3u8")) {
+      const indexPath = pathname
+        .substring("/pl/".length, pathname.length - "/index.m3u8".length);
+      const remoteIndexUrl = new URL(masterUrl).origin + "/pl/" + indexPath + "/index.m3u8";
+
+      let content = await fetchText(remoteIndexUrl);
+
+      content = content
+        .split("\n")
+        .map(line => {
+          if (line.startsWith("http")) {
+            // Convert .html to local .ts path
+            const localPath = "/segments/" + line.replace("https://", "").replace(/\//g, "_") + ".ts";
+            return localPath;
+          }
+          return line;
+        })
+        .join("\n");
+
+      return new Response(content, {
+        status: 200,
+        headers: { "Content-Type": "application/vnd.apple.mpegurl" },
       });
-      res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      return res.send(newLines.join("\n"));
     }
 
-    // Serve segment content
-    if (req.query.segment) {
-      let segName = req.query.segment;
-      let remoteHtml = segName.replace(/_/g, "/");
-      if (!remoteHtml.startsWith("http")) remoteHtml = "https://" + remoteHtml;
-      const content = await fetchBytes(remoteHtml);
-      res.setHeader("Content-Type", "video/MP2T");
-      return res.send(content);
+    // Serve segments as TS
+    if (pathname.startsWith("/segments/") && pathname.endsWith(".ts")) {
+      const segName = pathname.substring("/segments/".length, pathname.length - ".ts".length);
+      let remoteHtmlUrl = "https://" + segName.replace(/_/g, "/");
+
+      const resp = await fetch(remoteHtmlUrl);
+      if (!resp.ok) throw new Error(`Segment fetch failed: ${resp.status}`);
+      const buffer = await resp.arrayBuffer();
+
+      return new Response(buffer, {
+        status: 200,
+        headers: { "Content-Type": "video/MP2T" },
+      });
     }
 
-    res.status(400).send("Invalid request");
+    return new Response("Not found", { status: 404 });
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Error: " + err.message);
+    return new Response(err.message, { status: 500 });
   }
 }
