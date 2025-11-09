@@ -1,57 +1,72 @@
-// api/stream.js
+import fetch from "node-fetch";
+
+// Helper: fetch remote text
+async function fetchText(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  return res.text();
+}
+
+// Helper: fetch remote bytes
+async function fetchBytes(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
 export default async function handler(req, res) {
   try {
-    const { url, segment } = req.query;
+    const remoteUrl = req.query.url;
+    if (!remoteUrl) return res.status(400).send("Missing url parameter");
 
-    // If no URL provided
-    if (!url) {
-      return res.status(400).send("Missing 'url' query parameter");
-    }
-
-    // Fetch remote content
-    const fetchResponse = await fetch(url);
-    if (!fetchResponse.ok) throw new Error("Failed to fetch URL");
-
-    // Serve segment as TS
-    if (segment === "1") {
-      const arrayBuffer = await fetchResponse.arrayBuffer();
-      res.setHeader("Content-Type", "video/MP2T");
-      return res.status(200).send(Buffer.from(arrayBuffer));
-    }
-
-    // Get text content (master or index playlist)
-    const text = await fetchResponse.text();
-    const lines = text.split("\n");
-    const newLines = [];
-
-    // Detect master playlist (#EXT-X-STREAM-INF)
-    if (text.includes("#EXT-X-STREAM-INF")) {
-      for (const line of lines) {
-        if (line.startsWith("http") && line.endsWith("index.m3u8")) {
-          // Rewrite nested index URLs to local Vercel endpoint
-          newLines.push(`/api/stream?url=${encodeURIComponent(line)}`);
-        } else {
-          newLines.push(line);
+    // Handle master playlist
+    if (remoteUrl.endsWith("master.m3u8")) {
+      const masterContent = await fetchText(remoteUrl);
+      const lines = masterContent.split("\n");
+      const newLines = lines.map(line => {
+        if (line.startsWith("/pl/")) {
+          // Convert relative index paths to full API URLs
+          const fullIndexUrl = new URL(
+            line,
+            remoteUrl.replace(/master\.m3u8$/, "")
+          ).href;
+          return `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/stream?url=${encodeURIComponent(fullIndexUrl)}`;
         }
-      }
+        return line;
+      });
       res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      return res.status(200).send(newLines.join("\n"));
-    } else {
-      // Index playlist: rewrite segments (.html → .ts)
-      for (const line of lines) {
+      return res.send(newLines.join("\n"));
+    }
+
+    // Handle nested index playlists
+    if (remoteUrl.endsWith("index.m3u8")) {
+      const indexContent = await fetchText(remoteUrl);
+      const lines = indexContent.split("\n");
+      const newLines = lines.map(line => {
         if (line.startsWith("http")) {
-          const localPath = `/api/stream?url=${encodeURIComponent(line)}&segment=1`;
-          newLines.push(localPath);
-        } else {
-          newLines.push(line);
+          // Rewrite HTML segments to local .ts API paths
+          const localPath = line.replace("https://", "").replace(/\//g, "_") + ".ts";
+          return `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/stream?segment=${encodeURIComponent(localPath)}`;
         }
-      }
+        return line;
+      });
       res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
-      return res.status(200).send(newLines.join("\n"));
+      return res.send(newLines.join("\n"));
     }
 
+    // Serve segment content
+    if (req.query.segment) {
+      let segName = req.query.segment;
+      let remoteHtml = segName.replace(/_/g, "/");
+      if (!remoteHtml.startsWith("http")) remoteHtml = "https://" + remoteHtml;
+      const content = await fetchBytes(remoteHtml);
+      res.setHeader("Content-Type", "video/MP2T");
+      return res.send(content);
+    }
+
+    res.status(400).send("Invalid request");
   } catch (err) {
     console.error(err);
-    return res.status(500).send("Error: " + err.message);
+    res.status(500).send("Error: " + err.message);
   }
 }
