@@ -1,84 +1,57 @@
-export const config = {
-  runtime: "edge", // Use Edge Runtime (Vercel) - no npm modules needed
-};
-
-export default async function handler(req) {
+// api/stream.js
+export default async function handler(req, res) {
   try {
-    const { searchParams } = new URL(req.url);
-    const masterUrl = searchParams.get("url");
+    const { url, segment } = req.query;
 
-    if (!masterUrl) {
-      return new Response("Missing url parameter", { status: 400 });
+    // If no URL provided
+    if (!url) {
+      return res.status(400).send("Missing 'url' query parameter");
     }
 
-    // Helper to fetch text content
-    async function fetchText(url) {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-      return await res.text();
+    // Fetch remote content
+    const fetchResponse = await fetch(url);
+    if (!fetchResponse.ok) throw new Error("Failed to fetch URL");
+
+    // Serve segment as TS
+    if (segment === "1") {
+      const arrayBuffer = await fetchResponse.arrayBuffer();
+      res.setHeader("Content-Type", "video/MP2T");
+      return res.status(200).send(Buffer.from(arrayBuffer));
     }
 
-    // Parse path from request
-    const pathname = new URL(req.url).pathname;
+    // Get text content (master or index playlist)
+    const text = await fetchResponse.text();
+    const lines = text.split("\n");
+    const newLines = [];
 
-    // Serve master playlist
-    if (pathname.endsWith("/master.m3u8")) {
-      let content = await fetchText(masterUrl);
-      // Rewrite nested index URLs to local paths
-      content = content
-        .split("\n")
-        .map(line => (line.startsWith("/pl/") ? line : line))
-        .join("\n");
-
-      return new Response(content, {
-        status: 200,
-        headers: { "Content-Type": "application/vnd.apple.mpegurl" },
-      });
+    // Detect master playlist (#EXT-X-STREAM-INF)
+    if (text.includes("#EXT-X-STREAM-INF")) {
+      for (const line of lines) {
+        if (line.startsWith("http") && line.endsWith("index.m3u8")) {
+          // Rewrite nested index URLs to local Vercel endpoint
+          newLines.push(`/api/stream?url=${encodeURIComponent(line)}`);
+        } else {
+          newLines.push(line);
+        }
+      }
+      res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
+      return res.status(200).send(newLines.join("\n"));
+    } else {
+      // Index playlist: rewrite segments (.html → .ts)
+      for (const line of lines) {
+        if (line.startsWith("http")) {
+          const localPath = `/api/stream?url=${encodeURIComponent(line)}&segment=1`;
+          newLines.push(localPath);
+        } else {
+          newLines.push(line);
+        }
+      }
+      res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
+      return res.status(200).send(newLines.join("\n"));
     }
 
-    // Serve index playlists
-    if (pathname.startsWith("/pl/") && pathname.endsWith("/index.m3u8")) {
-      const indexPath = pathname
-        .substring("/pl/".length, pathname.length - "/index.m3u8".length);
-      const remoteIndexUrl = new URL(masterUrl).origin + "/pl/" + indexPath + "/index.m3u8";
-
-      let content = await fetchText(remoteIndexUrl);
-
-      content = content
-        .split("\n")
-        .map(line => {
-          if (line.startsWith("http")) {
-            // Convert .html to local .ts path
-            const localPath = "/segments/" + line.replace("https://", "").replace(/\//g, "_") + ".ts";
-            return localPath;
-          }
-          return line;
-        })
-        .join("\n");
-
-      return new Response(content, {
-        status: 200,
-        headers: { "Content-Type": "application/vnd.apple.mpegurl" },
-      });
-    }
-
-    // Serve segments as TS
-    if (pathname.startsWith("/segments/") && pathname.endsWith(".ts")) {
-      const segName = pathname.substring("/segments/".length, pathname.length - ".ts".length);
-      let remoteHtmlUrl = "https://" + segName.replace(/_/g, "/");
-
-      const resp = await fetch(remoteHtmlUrl);
-      if (!resp.ok) throw new Error(`Segment fetch failed: ${resp.status}`);
-      const buffer = await resp.arrayBuffer();
-
-      return new Response(buffer, {
-        status: 200,
-        headers: { "Content-Type": "video/MP2T" },
-      });
-    }
-
-    return new Response("Not found", { status: 404 });
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    console.error(err);
+    return res.status(500).send("Error: " + err.message);
   }
 }
