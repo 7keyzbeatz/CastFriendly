@@ -5,9 +5,11 @@
 
 body {
     margin: 0;
-    background: #0e1015;
+    background: radial-gradient(1200px 600px at top, #111827, #0b0e13);
     color: #e5e7eb;
 }
+
+/* ================= TOPBAR ================= */
 
 .topbar {
     display: flex;
@@ -15,6 +17,7 @@ body {
     align-items: center;
     padding: 18px 40px;
     border-bottom: 1px solid #1f2937;
+    backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -30,12 +33,15 @@ body {
     color: #9ca3af;
     margin-left: 20px;
     text-decoration: none;
+    font-weight: 600;
 }
 
     .topbar nav a.active,
     .topbar nav a:hover {
         color: #fff;
     }
+
+/* ================= FILTERS ================= */
 
 .filters {
     display: flex;
@@ -46,12 +52,15 @@ body {
 
     .filters input,
     .filters select {
-        background: #111827;
+        background: #0f172a;
         border: 1px solid #1f2937;
         color: #fff;
         padding: 12px 14px;
-        border-radius: 10px;
+        border-radius: 12px;
+        font-size: 14px;
     }
+
+/* ================= GRID ================= */
 
 .brands-grid {
     padding: 20px 40px 60px;
@@ -60,47 +69,64 @@ body {
     gap: 28px;
 }
 
-/* Mobile */
 @media (max-width: 900px) {
     .brands-grid {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 
+/* ================= CARD ================= */
+
 .brand-card {
-    background: linear-gradient(180deg, #111827, #0b0e13);
+    background: linear-gradient(180deg, #0f172a, #020617);
     border: 1px solid #1f2937;
-    border-radius: 18px;
-    padding: 20px;
+    border-radius: 22px;
+    padding: 22px;
     position: relative;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
+
+    .brand-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+/* ================= RANK ================= */
 
 .rank-badge {
     position: absolute;
-    top: -12px;
-    left: 18px;
-    background: #f5a524;
+    top: -14px;
+    left: 20px;
+    background: linear-gradient(135deg, #f5a524, #ffb84d);
     color: #000;
-    font-weight: 800;
-    padding: 6px 12px;
+    font-weight: 900;
+    padding: 6px 14px;
     border-radius: 999px;
+    font-size: 14px;
 }
 
+/* ================= LOGO ================= */
+
 .brand-logo {
-    height: 60px;
+    height: 64px;
     display: flex;
     align-items: center;
+    margin-bottom: 12px;
 }
 
     .brand-logo img {
         max-height: 100%;
-        max-width: 160px;
+        max-width: 180px;
+        object-fit: contain;
     }
 
+/* ================= TEXT ================= */
+
 .brand-name {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 14px 0 8px;
+    font-size: 19px;
+    font-weight: 800;
+    margin: 10px 0 6px;
 }
 
 .meta {
@@ -108,11 +134,13 @@ body {
     color: #9ca3af;
 }
 
+/* ================= STATS ================= */
+
 .stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin: 14px 0;
+    gap: 10px;
+    margin: 18px 0;
     font-size: 14px;
 }
 
@@ -120,40 +148,177 @@ body {
         color: #fff;
     }
 
+/* ================= TAGS ================= */
+
 .tags {
     display: flex;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .tag {
-    padding: 4px 10px;
+    padding: 4px 12px;
     font-size: 12px;
     border-radius: 999px;
     font-weight: 700;
 }
 
 .vpn {
-    background: #064e3b;
+    background: rgba(34,197,94,.15);
     color: #22c55e;
 }
 
 .lang {
-    background: #1e293b;
+    background: rgba(96,165,250,.15);
     color: #60a5fa;
 }
+
+/* ================= CTA ================= */
 
 .cta {
     display: block;
     text-align: center;
-    background: #f5a524;
+    background: linear-gradient(135deg, #f5a524, #ffb84d);
     color: #000;
     padding: 14px;
     border-radius: 999px;
-    font-weight: 800;
+    font-weight: 900;
     text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
 }
 
     .cta:hover {
-        background: #ffb84d;
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(245,165,36,.35);
     }
+
+/* ================= BONUS BOX ================= */
+
+.bonus-box {
+    margin: 22px 0;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(245,165,36,.12), rgba(0,0,0,.2));
+    border: 1px solid rgba(245,165,36,.25);
+    border-radius: 18px;
+}
+
+.bonus-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+    .bonus-main span {
+        font-size: 14px;
+        color: #f5a524;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .bonus-main strong {
+        font-size: 34px;
+        font-weight: 900;
+        color: #f5a524;
+    }
+
+.bonus-sub {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+    .bonus-sub div {
+        background: #020617;
+        border: 1px solid #1f2937;
+        border-radius: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .bonus-sub span {
+        display: block;
+        font-size: 12px;
+        color: #9ca3af;
+        margin-bottom: 4px;
+    }
+
+    .bonus-sub strong {
+        font-size: 15px;
+        font-weight: 800;
+        color: #fff;
+    }
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .bonus-sub {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+    .btn.primary {
+        background: linear-gradient(135deg, #f5a524, #ffb84d);
+        color: #000;
+    }
+
+        .btn.primary:hover {
+            transform: scale(1.03);
+        }
+
+    .btn.ghost {
+        background: transparent;
+        border: 1px solid #1f2937;
+        color: #e5e7eb;
+    }
+
+        .btn.ghost:hover {
+            background: #020617;
+        }
+
+/* ================= DESCRIPTION ================= */
+
+.description {
+    margin-top: 18px;
+    padding: 16px;
+    background: #020617;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d5db;
+    animation: fadeIn .25s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

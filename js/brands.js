@@ -1,41 +1,61 @@
 ﻿let brands = [];
 
+const grid = document.getElementById("brandsGrid");
+const searchInput = document.getElementById("searchInput");
+const vpnFilter = document.getElementById("vpnFilter");
+const licenseFilter = document.getElementById("licenseFilter");
+const languageFilter = document.getElementById("languageFilter");
+
 fetch("data/brands.json")
-    .then(r => r.json())
+    .then(res => res.json())
     .then(data => {
         brands = data.brands;
         populateLicenses();
-        render();
+        renderBrands();
+    })
+    .catch(err => {
+        console.error("Failed to load brands.json", err);
     });
 
 function populateLicenses() {
-    const select = document.getElementById("licenseFilter");
     const licenses = new Set();
 
-    brands.forEach(b => b.licenses.forEach(l => licenses.add(l)));
+    brands.forEach(b => {
+        (b.licenses || []).forEach(l => licenses.add(l));
+    });
+
     licenses.forEach(l => {
         const opt = document.createElement("option");
         opt.value = l;
         opt.textContent = l;
-        select.appendChild(opt);
+        licenseFilter.appendChild(opt);
     });
 }
 
-function render() {
-    const grid = document.getElementById("brandsGrid");
+function renderBrands() {
     grid.innerHTML = "";
 
-    const q = document.getElementById("searchInput").value.toLowerCase();
-    const vpn = document.getElementById("vpnFilter").value;
-    const lic = document.getElementById("licenseFilter").value;
-    const lang = document.getElementById("languageFilter").value;
+    const q = searchInput.value.toLowerCase();
+    const vpn = vpnFilter.value;
+    const lic = licenseFilter.value;
+    const lang = languageFilter.value;
 
     brands
         .filter(b => {
             if (q && !b.name.toLowerCase().includes(q)) return false;
-            if (vpn !== "all" && String(b.features.vpnFriendly) !== vpn) return false;
-            if (lic !== "all" && !b.licenses.includes(lic)) return false;
-            if (lang !== "all" && !b.features.languages.includes(lang)) return false;
+
+            if (vpn !== "all" && String(b.features.vpnFriendly) !== vpn)
+                return false;
+
+            if (lic !== "all" && !b.licenses.includes(lic))
+                return false;
+
+            if (
+                lang !== "all" &&
+                !b.features.languages.includes(lang)
+            )
+                return false;
+
             return true;
         })
         .forEach(b => {
@@ -43,34 +63,63 @@ function render() {
             card.className = "brand-card";
 
             card.innerHTML = `
-                <div class="rank-badge">${b.rank}</div>
+  <div class="rank-badge">${b.rank}</div>
 
-                <div class="brand-logo">
-                    <img src="${b.media.logo || ''}">
-                </div>
+  <div class="brand-header-row">
+    <div class="brand-logo">
+      <img src="${b.media.logo}" alt="${b.name}">
+    </div>
+    <div>
+      <div class="brand-name">${b.name}</div>
+      <div class="meta">${b.company.owner} • Est. ${b.company.established}</div>
+    </div>
+  </div>
 
-                <div class="brand-name">${b.name}</div>
-                <div class="meta">${b.company.owner} • ${b.company.established}</div>
+  <div class="bonus-box">
+    <div class="bonus-main">
+      <span>WELCOME BONUS</span>
+      <strong>${b.bonus.percentage}%</strong>
+    </div>
 
-                <div class="stats">
-                    <div><strong>${b.bonus.percentage}%</strong> Bonus</div>
-                    <div><strong>€${b.bonus.maxAmount}</strong> Max</div>
-                    <div><strong>${b.bonus.freeSpins ?? "—"}</strong> FS</div>
-                    <div><strong>x${b.bonus.wager ?? "—"}</strong> Wager</div>
-                </div>
+    <div class="bonus-sub">
+      <div><span>Max Bonus</span><strong>€${b.bonus.maxAmount}</strong></div>
+      <div><span>Free Spins</span><strong>${b.bonus.freeSpins ?? "—"}</strong></div>
+      <div><span>Wager</span><strong>x${b.bonus.wager ?? "—"}</strong></div>
+    </div>
+  </div>
 
-                <div class="tags">
-                    ${b.features.vpnFriendly ? `<div class="tag vpn">VPN</div>` : ""}
-                    ${b.features.languages.includes("Greek") ? `<div class="tag lang">Greek</div>` : ""}
-                </div>
+  <div class="tags">
+    ${b.features.vpnFriendly ? `<span class="tag vpn">VPN</span>` : ""}
+    ${b.features.languages.includes("Greek") ? `<span class="tag lang">Greek</span>` : ""}
+  </div>
 
-                <a class="cta" href="${b.links.claimOffer}" target="_blank" rel="nofollow">
-                    Claim Offer
-                </a>
-            `;
+  <div class="card-actions">
+    ${b.summary ? `<button class="btn ghost" data-desc>Description</button>` : ""}
+    <a class="btn primary" href="brand.html?id=${b.id}">More Info</a>
+  </div>
+
+  ${b.summary ? `<div class="description hidden">${b.summary}</div>` : ""}
+`;
+            card.querySelectorAll("[data-desc]").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const desc = card.querySelector(".description");
+                    desc.classList.toggle("hidden");
+                    btn.textContent = desc.classList.contains("hidden")
+                        ? "Description"
+                        : "Hide";
+                });
+            });
+
             grid.appendChild(card);
         });
 }
 
-["searchInput", "vpnFilter", "licenseFilter", "languageFilter"]
-    .forEach(id => document.getElementById(id).addEventListener("input", render));
+/* EVENTS */
+[
+    searchInput,
+    vpnFilter,
+    licenseFilter,
+    languageFilter
+].forEach(el => {
+    el.addEventListener("input", renderBrands);
+});
