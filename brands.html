@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casino Brands</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/brands.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo">Casino<span>Deals</span></div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="brands.html" class="active">Brands</a>
+            <a href="giveaways.html">Giveaways</a>
+            <a href="rules.html">Rules</a>
+        </nav>
+    </header>
+
+    <section class="filters">
+        <input type="text" id="searchInput" placeholder="Search casino…">
+
+        <select id="vpnFilter">
+            <option value="all">VPN</option>
+            <option value="true">VPN Friendly</option>
+            <option value="false">No VPN</option>
+        </select>
+
+        <select id="licenseFilter">
+            <option value="all">All Licenses</option>
+        </select>
+
+        <select id="languageFilter">
+            <option value="all">All Languages</option>
+            <option value="English">English</option>
+            <option value="Greek">Greek</option>
+        </select>
+    </section>
+
+    <section id="brandsGrid" class="brands-grid"></section>
+
+    <script src="js/brands.js"></script>
+</body>
+</html>

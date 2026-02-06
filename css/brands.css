@@ -1,0 +1,159 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #0e1015;
+    color: #e5e7eb;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 22px;
+}
+
+    .logo span {
+        color: #f5a524;
+    }
+
+.topbar nav a {
+    color: #9ca3af;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+    .topbar nav a.active,
+    .topbar nav a:hover {
+        color: #fff;
+    }
+
+.filters {
+    display: flex;
+    gap: 12px;
+    padding: 24px 40px;
+    flex-wrap: wrap;
+}
+
+    .filters input,
+    .filters select {
+        background: #111827;
+        border: 1px solid #1f2937;
+        color: #fff;
+        padding: 12px 14px;
+        border-radius: 10px;
+    }
+
+.brands-grid {
+    padding: 20px 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.brand-card {
+    background: linear-gradient(180deg, #111827, #0b0e13);
+    border: 1px solid #1f2937;
+    border-radius: 18px;
+    padding: 20px;
+    position: relative;
+}
+
+.rank-badge {
+    position: absolute;
+    top: -12px;
+    left: 18px;
+    background: #f5a524;
+    color: #000;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+.brand-logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+    .brand-logo img {
+        max-height: 100%;
+        max-width: 160px;
+    }
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 14px 0 8px;
+}
+
+.meta {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+    .stats strong {
+        color: #fff;
+    }
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.tag {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.vpn {
+    background: #064e3b;
+    color: #22c55e;
+}
+
+.lang {
+    background: #1e293b;
+    color: #60a5fa;
+}
+
+.cta {
+    display: block;
+    text-align: center;
+    background: #f5a524;
+    color: #000;
+    padding: 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+    .cta:hover {
+        background: #ffb84d;
+    }

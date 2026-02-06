@@ -1,0 +1,663 @@
+﻿{
+    "meta": {
+        "version": "1.0",
+        "lastUpdated": "2026-02-07",
+        "defaultCurrency": "EUR"
+    },
+    "brands": [
+        {
+            "id": "spinorhino",
+            "rank": "A",
+            "name": "Spinorhino Casino",
+            "media": {
+                "logo": "img/logos/spinorhino.png",
+                "background": "img/bg/spinorhino.jpg"
+            },
+            "company": {
+                "owner": "JETRHOLOCO LIMITADA",
+                "established": 2026
+            },
+            "licenses": [ "Costa Rica" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 500,
+                "freeSpins": 100,
+                "wager": 40,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "USD"
+                },
+                "perDay": {
+                    "amount": 5000,
+                    "currency": "USD"
+                }
+            },
+            "links": {
+                "claimOffer": "#"
+            }
+        },
+
+        {
+            "id": "casino-b",
+            "rank": "B",
+            "name": "Casino B",
+            "media": {
+                "logo": "img/logos/casino-b.png",
+                "background": "img/bg/casino-b.jpg"
+            },
+            "company": {
+                "owner": "Pacific Odds S.R.L.",
+                "established": 2024
+            },
+            "licenses": [ "Comoros" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 120,
+                "maxAmount": 500,
+                "freeSpins": 100,
+                "wager": 35,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 100000,
+                    "currency": "USD"
+                }
+            },
+            "links": {
+                "claimOffer": "#"
+            }
+        },
+
+        {
+            "id": "latcas",
+            "rank": "1",
+            "name": "LATCAS Casino",
+            "media": {
+                "logo": "img/logos/latcas.png",
+                "background": "img/bg/latcas.jpg"
+            },
+            "company": {
+                "owner": "LATCAS B.V.",
+                "established": 2025
+            },
+            "licenses": [ "Curaçao (ANT)", "Comoros (AOFA)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 120,
+                "maxAmount": 600,
+                "freeSpins": 125,
+                "wager": 40,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "USD"
+                },
+                "perDay": {
+                    "amount": 4000,
+                    "currency": "USD"
+                }
+            },
+            "links": {
+                "claimOffer": "#"
+            }
+        },
+
+        {
+            "id": "gbl",
+            "rank": "2",
+            "name": "GBL Casino",
+            "media": {
+                "logo": "img/logos/gbl.png",
+                "background": "img/bg/gbl.jpg"
+            },
+            "company": {
+                "owner": "GBL Solutions N.V.",
+                "established": 2024
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 150,
+                "maxAmount": 350,
+                "freeSpins": 200,
+                "wager": 40,
+                "code": "FAMILIA"
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 20000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "#"
+            }
+        },
+
+        {
+            "id": "madial",
+            "rank": "3",
+            "name": "Madial Casino",
+            "media": {
+                "logo": "img/logos/madial.png",
+                "background": "img/bg/madial.jpg"
+            },
+            "company": {
+                "owner": "Madial N.V.",
+                "established": 2025
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 500,
+                "freeSpins": 50,
+                "wager": 35,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perDay": {
+                    "amount": 500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "#"
+            }
+        },
+        {
+            "id": "moonlite-2008",
+            "rank": "4",
+            "name": "Moonlite Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Moonlite N.V.",
+                "established": 2008
+            },
+            "licenses": [ "Curaçao (ANT)", "Kahnawake (KGC)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 600,
+                "freeSpins": null,
+                "wager": 30,
+                "code": null
+            },
+            "withdrawals": {
+                "unlimitedEur": true,
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "versus-odds-2020",
+            "rank": "5",
+            "name": "Versus Odds Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2020
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 200,
+                "freeSpins": null,
+                "wager": null,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "lyntec",
+            "rank": "6",
+            "name": "Lyntec Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Lyntec Limited",
+                "established": 2025
+            },
+            "licenses": [ "Costa Rica" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 500,
+                "freeSpins": 100,
+                "wager": 40,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 30000,
+                    "currency": "EUR"
+                },
+                "perDay": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "moonlite-2017",
+            "rank": "7",
+            "name": "Moonlite Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Moonlite N.V.",
+                "established": 2017
+            },
+            "licenses": [ "Curaçao (ANT)", "Kahnawake (KGC)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 500,
+                "freeSpins": null,
+                "wager": 30,
+                "code": null
+            },
+            "withdrawals": {
+                "unlimitedEur": true,
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "versus-odds-2023",
+            "rank": "8",
+            "name": "Versus Odds Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2023
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 300,
+                "freeSpins": null,
+                "wager": null,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "leva-2025",
+            "rank": "9",
+            "name": "Leva Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Leva Ltd",
+                "established": 2025
+            },
+            "licenses": [ "Comoros (AOFA)" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 1000,
+                "freeSpins": 150,
+                "wager": 30,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perDay": {
+                    "amount": 500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "zephyr-2025",
+            "rank": "10",
+            "name": "Zephyr Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Zephyr Holding Sociedad De Responsabilidad Limitada",
+                "established": 2025
+            },
+            "licenses": [ "Costa Rica" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 500,
+                "freeSpins": 100,
+                "wager": 40,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "EUR"
+                },
+                "perDay": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "twicedice-2023",
+            "rank": "11",
+            "name": "TwiceDice Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "TwiceDice B.V.",
+                "established": 2023
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [ "English" ],
+                "liveChat": [ "English", "Greek" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 300,
+                "freeSpins": 100,
+                "wager": 40,
+                "code": null
+            },
+            "withdrawals": {
+                "unlimitedEur": true,
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "versus-odds-2024-basic",
+            "rank": "12",
+            "name": "Versus Odds Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2024
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 300,
+                "freeSpins": null,
+                "wager": null,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "versus-odds-2024-vpn",
+            "rank": "13",
+            "name": "Versus Odds Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2024
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 150,
+                "maxAmount": 150,
+                "freeSpins": null,
+                "wager": null,
+                "code": "Familia150"
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "mirage-2020",
+            "rank": "14",
+            "name": "Mirage Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Mirage Corporation N.V.",
+                "established": 2020
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 250,
+                "freeSpins": 25,
+                "wager": null,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        },
+        {
+            "id": "versus-odds-2022",
+            "rank": "15",
+            "name": "Versus Odds Casino",
+            "media": {
+                "logo": "",
+                "background": ""
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2022
+            },
+            "licenses": [ "Curaçao (ANT)" ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English" ],
+                "liveChat": [ "English" ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "maxAmount": 200,
+                "freeSpins": 25,
+                "wager": null,
+                "code": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": ""
+            }
+        }
+    ]
+}
