@@ -6,10 +6,14 @@ const vpnFilter = document.getElementById("vpnFilter");
 const licenseFilter = document.getElementById("licenseFilter");
 const languageFilter = document.getElementById("languageFilter");
 
+// OPTIONAL στοιχεία (αν δεν υπάρχουν, δεν σπάει)
+const resultsCount = document.getElementById("resultsCount");
+const noResults = document.getElementById("noResults");
+
 fetch("data/brands.json")
     .then(res => res.json())
     .then(data => {
-        brands = data.brands;
+        brands = data.brands || [];
         populateLicenses();
         renderBrands();
     })
@@ -40,130 +44,119 @@ function renderBrands() {
     const lic = licenseFilter.value;
     const lang = languageFilter.value;
 
-    brands
-        .filter(b => {
-            if (q && !b.name.toLowerCase().includes(q)) return false;
+    // ===== FILTER =====
+    const filteredBrands = brands.filter(b => {
+        if (q && !b.name.toLowerCase().includes(q)) return false;
 
-            if (vpn !== "all" && String(b.features.vpnFriendly) !== vpn)
-                return false;
+        if (vpn !== "all" && String(b.features.vpnFriendly) !== vpn)
+            return false;
 
-            if (lic !== "all" && !b.licenses.includes(lic))
-                return false;
+        if (lic !== "all" && !b.licenses.includes(lic))
+            return false;
 
-            if (
-                lang !== "all" &&
-                !b.features.languages.includes(lang)
-            )
-                return false;
+        if (lang !== "all" && !b.features.languages.includes(lang))
+            return false;
 
-            return true;
-        })
-        .forEach(b => {
-            const card = document.createElement("div");
-            card.className = "brand-card";
+        return true;
+    });
 
-            card.innerHTML = `
-  <div class="rank-badge">${b.rank}</div>
+    // ===== RESULTS COUNT =====
+    if (resultsCount) {
+        resultsCount.textContent =
+            `Εμφανίζονται ${filteredBrands.length} από ${brands.length} καζίνο`;
+    }
 
-    <div class="card-badges">
-    ${
-                (() => {
-                    const langs = b.features.languages || [];
-                    if (langs.includes("Greek") && langs.includes("English"))
-                        return `<span class="badge badge-lang">Greek / English</span>`;
-                    if (langs.includes("Greek"))
-                        return `<span class="badge badge-lang">Greek</span>`;
-                    if (langs.includes("English"))
-                        return `<span class="badge badge-lang">English</span>`;
-                    return "";
-                })()
-                }
+    // ===== NO RESULTS =====
+    if (noResults) {
+        if (filteredBrands.length === 0) {
+            noResults.classList.remove("hidden");
+        } else {
+            noResults.classList.add("hidden");
+        }
+    }
 
-    <span class="badge ${b.features.vpnFriendly ? "badge-vpn-yes" : "badge-vpn-no"}">
-      VPN
-    </span>
-  </div>
+    // ===== RENDER =====
+    filteredBrands.forEach(b => {
+        const card = document.createElement("div");
+        card.className = "brand-card";
 
-  <div class="brand-header-row">
+        card.innerHTML = `
+<div class="rank-badge">${b.rank}</div>
+
+<div class="card-badges">
+  ${(() => {
+                const langs = b.features.languages || [];
+                if (langs.includes("Greek") && langs.includes("English"))
+                    return `<span class="badge badge-lang">Greek / English</span>`;
+                if (langs.includes("Greek"))
+                    return `<span class="badge badge-lang">Greek</span>`;
+                if (langs.includes("English"))
+                    return `<span class="badge badge-lang">English</span>`;
+                return "";
+            })()
+            }
+  <span class="badge ${b.features.vpnFriendly ? "badge-vpn-yes" : "badge-vpn-no"}">
+    VPN
+  </span>
+</div>
+
+<div class="brand-header-row">
   <div class="brand-logo">
     <img src="${b.media.logo}" alt="${b.name}">
   </div>
-
   <div class="brand-name">${b.name}</div>
   <div class="meta">${b.company.owner} • Est. ${b.company.established}</div>
 </div>
 
-  <div class="bonus-box">
-    <div class="bonus-main">
-      <span>WELCOME BONUS</span>
-      <strong>${b.bonus.percentage}%</strong>
-    </div>
-
-    <div class="bonus-sub">
-      <div><span>Max Bonus</span><strong>€${b.bonus.maxAmount}</strong></div>
-      <div><span>Free Spins</span><strong>${b.bonus.freeSpins ?? "—"}</strong></div>
-      <div><span>Wager</span><strong>x${b.bonus.wager ?? "—"}</strong></div>
-    </div>
+<div class="bonus-box">
+  <div class="bonus-main">
+    <span>WELCOME BONUS</span>
+    <strong>${b.bonus.percentage}%</strong>
   </div>
+  <div class="bonus-sub">
+    <div><span>Max Bonus</span><strong>€${b.bonus.maxAmount}</strong></div>
+    <div><span>Free Spins</span><strong>${b.bonus.freeSpins ?? "—"}</strong></div>
+    <div><span>Wager</span><strong>x${b.bonus.wager ?? "—"}</strong></div>
+  </div>
+</div>
 
-
-
-    ${b.withdrawals ? `
-  <div class="withdrawals-box">
-    <div class="withdrawals-title">Withdrawals</div>
-
-    <div class="withdrawals-sub">
-      <div>
-        <span>Weekly</span>
-        <strong>
-          ${b.withdrawals.perWeek
-                        ? `€${b.withdrawals.perWeek.amount.toLocaleString()}`
-                        : "N/A"}
-        </strong>
-      </div>
-
-      <div>
-        <span>Monthly</span>
-        <strong>
-          ${b.withdrawals.perMonth
-                        ? `€${b.withdrawals.perMonth.amount.toLocaleString()}`
-                        : "N/A"}
-        </strong>
-      </div>
+<div class="withdrawals-box">
+  <div class="withdrawals-title">Withdrawals</div>
+  <div class="withdrawals-sub">
+    <div>
+      <span>Weekly</span>
+      <strong>${b.withdrawals?.perWeek ? `€${b.withdrawals.perWeek.amount.toLocaleString()}` : "N/A"}</strong>
+    </div>
+    <div>
+      <span>Monthly</span>
+      <strong>${b.withdrawals?.perMonth ? `€${b.withdrawals.perMonth.amount.toLocaleString()}` : "N/A"}</strong>
     </div>
   </div>
-  ` : `
-  <div class="withdrawals-box">
-    <div class="withdrawals-title">Withdrawals</div>
-    <div class="withdrawals-sub">
-      <div><span>Weekly</span><strong>N/A</strong></div>
-      <div><span>Monthly</span><strong>N/A</strong></div>
-    </div>
-  </div>
-  `}
+</div>
 
-  <div class="card-actions">
-    ${b.summary ? `<button class="btn ghost" data-desc>Description</button>` : ""}
-    <a class="btn ghost" href="brand.html?id=${b.id}">More Info</a>
-  </div>
+<div class="card-actions">
+  ${b.summary ? `<button class="btn ghost" data-desc>Description</button>` : ""}
+  <a class="btn ghost" href="brand.html?id=${b.id}">More Info</a>
+</div>
 
-  ${b.summary ? `<div class="description hidden">${b.summary}</div>` : ""}
+${b.summary ? `<div class="description hidden">${b.summary}</div>` : ""}
 `;
-            card.querySelectorAll("[data-desc]").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    const desc = card.querySelector(".description");
-                    desc.classList.toggle("hidden");
-                    btn.textContent = desc.classList.contains("hidden")
-                        ? "Description"
-                        : "Hide";
-                });
-            });
 
-            grid.appendChild(card);
+        card.querySelectorAll("[data-desc]").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const desc = card.querySelector(".description");
+                desc.classList.toggle("hidden");
+                btn.textContent = desc.classList.contains("hidden")
+                    ? "Description"
+                    : "Hide";
+            });
         });
+
+        grid.appendChild(card);
+    });
 }
 
-/* EVENTS */
+// ===== EVENTS =====
 [
     searchInput,
     vpnFilter,
