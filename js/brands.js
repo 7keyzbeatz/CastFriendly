@@ -10,7 +10,7 @@ const languageFilter = document.getElementById("languageFilter");
 const resultsCount = document.getElementById("resultsCount");
 const noResults = document.getElementById("noResults");
 
-fetch("data/brands.json")
+fetch("../data/brands.json")
     .then(res => res.json())
     .then(data => {
         brands = data.brands || [];
