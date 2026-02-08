@@ -9,19 +9,28 @@
             "id": "spinorhino",
             "rank": "A",
             "name": "Spinorhino Casino",
+            "description": "Το SlotsGem είναι ένας κορυφαίος προορισμός για slots με τεράστια ποικιλία παρόχων και άμεσες πληρωμές. Ιδανικό για παίκτες που ζητούν υψηλά bonus και ασφάλεια.",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2026/02/spinorhinoo-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2026/02/spinorhinoo-removebg-preview.png"
+                "background": "https://screenshot.slotcatalog.com/userfiles/image/casino/spinorhino/spinorhino-GR-20260203.jpg"
             },
             "company": {
                 "owner": "JETRHOLOCO LIMITADA",
                 "established": 2026
             },
-            "licenses": [ "Costa Rica" ],
+            "licenses": [
+                "Costa Rica"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -44,24 +53,30 @@
                 "claimOffer": "#"
             }
         },
-
         {
-            "id": "casino-b",
+            "id": "freespinz",
             "rank": "B",
             "name": "FreeSpinz",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2026/02/removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2026/02/removebg-preview.png"
+                "background": "https://res.cloudinary.com/casinogrounds/image/upload/f_auto,q_auto,w_auto,c_scale/v1648567569/casinos/spinz/games-casino-spinz.jpg"
             },
             "company": {
                 "owner": "Pacific Odds S.R.L.",
                 "established": 2024
             },
-            "licenses": [ "Comoros" ],
+            "licenses": [
+                "Comoros"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 120,
@@ -80,24 +95,32 @@
                 "claimOffer": "#"
             }
         },
-
         {
-            "id": "latcas",
+            "id": "slotsgem",
             "rank": "1",
             "name": "SlotsGem",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/09/photo_2025-09-10_22-35-36-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/09/photo_2025-09-10_22-35-36-removebg-preview.png"
+                "background": "https://www.slots4play.com/wp-content/uploads/2025/02/SlotsGem-bonus-codes.png"
             },
             "company": {
                 "owner": "LATCAS B.V.",
                 "established": 2025
             },
-            "licenses": [ "Curaçao (ANT)", "Comoros (AOFA)" ],
+            "licenses": [
+                "Curaçao (ANT)",
+                "Comoros (AOFA)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 120,
@@ -120,24 +143,30 @@
                 "claimOffer": "#"
             }
         },
-
         {
-            "id": "gbl",
+            "id": "spinline",
             "rank": "2",
             "name": "SpinLine",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/10/spinline-casino.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/10/spinline-casino.png"
+                "background": "https://static.casino.guru/pict/1235021/spinline_casino_game_gallery_desktop.png?timestamp=1748517000000&imageDataId=1335903"
             },
             "company": {
                 "owner": "GBL Solutions N.V.",
                 "established": 2024
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 150,
@@ -160,24 +189,31 @@
                 "claimOffer": "#"
             }
         },
-
         {
-            "id": "madial",
+            "id": "roll-casino",
             "rank": "3",
             "name": "Roll Casino",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/07/photo_2025-07-11_18-51-50-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/07/photo_2025-07-11_18-51-50-removebg-preview.png"
+                "background": "https://www.nightrush.com/en/wp-content/uploads/sites/2/2025/10/ss-2-rollcasino.webp"
             },
             "company": {
                 "owner": "Madial N.V.",
                 "established": 2025
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -201,22 +237,31 @@
             }
         },
         {
-            "id": "moonlite-2008",
+            "id": "leon",
             "rank": "4",
             "name": "Leon",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/leon-casino.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/leon-casino.png"
+                "background": "https://cryptozooworld.com/wp-content/uploads/leon_home_screenshot.webp"
             },
             "company": {
                 "owner": "Moonlite N.V.",
                 "established": 2008
             },
-            "licenses": [ "Curaçao (ANT)", "Kahnawake (KGC)" ],
+            "licenses": [
+                "Curaçao (ANT)",
+                "Kahnawake (KGC)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -237,22 +282,29 @@
             }
         },
         {
-            "id": "versus-odds-2020",
+            "id": "wolfy-casino",
             "rank": "5",
             "name": "Wolfy Casino",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/Wolfy-casino-Logo-2048x610.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/Wolfy-casino-Logo-2048x610.png"
+                "background": "https://a1.worldcasinodirectory.com/system/modules/casino/images/attachments/000/384/212/original/Wolfy_Casino_01.12.2025._Hp.jpg?1764577715"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
                 "established": 2020
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -276,22 +328,29 @@
             }
         },
         {
-            "id": "lyntec",
+            "id": "true-luck",
             "rank": "6",
             "name": "True Luck",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/04/True-luck-logo-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/04/True-luck-logo-removebg-preview.png"
+                "background": "https://screenshot.slotcatalog.com/userfiles/image/casino/true-luck/true-luck-GR-20260205.jpg"
             },
             "company": {
                 "owner": "Lyntec Limited",
                 "established": 2025
             },
-            "licenses": [ "Costa Rica" ],
+            "licenses": [
+                "Costa Rica"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -315,22 +374,31 @@
             }
         },
         {
-            "id": "moonlite-2017",
+            "id": "twin",
             "rank": "7",
             "name": "Twin",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/twin-casino.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/twin-casino.png"
+                "background": "https://5litra.ru/wp-content/uploads/2024/06/1.jpg"
             },
             "company": {
                 "owner": "Moonlite N.V.",
                 "established": 2017
             },
-            "licenses": [ "Curaçao (ANT)", "Kahnawake (KGC)" ],
+            "licenses": [
+                "Curaçao (ANT)",
+                "Kahnawake (KGC)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -351,22 +419,29 @@
             }
         },
         {
-            "id": "versus-odds-2023",
+            "id": "stupid-casino",
             "rank": "8",
             "name": "Stupid Casino",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/StupidCasino_logo-2048x922.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/StupidCasino_logo-2048x922.png"
+                "background": "https://static.casino.guru/pict/1221983/stupid_casino_game_gallery_desktop.png?timestamp=1747321861000&imageDataId=1319559"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
                 "established": 2023
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -390,22 +465,29 @@
             }
         },
         {
-            "id": "leva-2025",
+            "id": "7-play",
             "rank": "9",
             "name": "7 Play",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/06/images__1_-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/06/images__1_-removebg-preview.png"
+                "background": "https://cdn.irishluck.ie/filters:format(webp)/fit-in/675x352/1761817157/sevenplay-casino-game-collection.jpg"
             },
             "company": {
                 "owner": "Leva Ltd",
                 "established": 2025
             },
-            "licenses": [ "Comoros (AOFA)" ],
+            "licenses": [
+                "Comoros (AOFA)"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -429,22 +511,29 @@
             }
         },
         {
-            "id": "zephyr-2025",
+            "id": "holly-luck",
             "rank": "10",
             "name": "Holly Luck",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/11/holy-removebg-preview.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/11/holy-removebg-preview.png"
+                "background": "https://cdn.static.express/storage/casino/GRCR/img/casinos-screenshots/oaRXPO1dq0bYHbjLmUoOFIsrvUuBjgHiOA4Oktuy.webp"
             },
             "company": {
                 "owner": "Zephyr Holding Sociedad De Responsabilidad Limitada",
                 "established": 2025
             },
-            "licenses": [ "Costa Rica" ],
+            "licenses": [
+                "Costa Rica"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English", "Greek" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -468,22 +557,29 @@
             }
         },
         {
-            "id": "twicedice-2023",
+            "id": "hit-n-spin",
             "rank": "11",
             "name": "Hit' N' Spin",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/hitnspin-casino.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/hitnspin-casino.png"
+                "background": "https://cdn.static.express/storage/casino/GRCR/img/casinos-screenshots/hitnspin-casino-1.webp"
             },
             "company": {
                 "owner": "TwiceDice B.V.",
                 "established": 2023
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": false,
-                "languages": [ "English" ],
-                "liveChat": [ "English", "Greek" ]
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -504,22 +600,28 @@
             }
         },
         {
-            "id": "versus-odds-2024-basic",
+            "id": "casinostars",
             "rank": "12",
             "name": "CasinoStars",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/casinostars-new.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/casinostars-new.png"
+                "background": "https://nowagering.com/storage/app/uploads/public/672/4a5/512/6724a5512ba2e831433659.webp"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
                 "established": 2024
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -543,22 +645,28 @@
             }
         },
         {
-            "id": "versus-odds-2024-vpn",
+            "id": "casino-orca",
             "rank": "13",
             "name": "Casino Orca",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/10/casino-orca-new.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/10/casino-orca-new.png"
+                "background": "https://nowagering.com/storage/app/uploads/public/672/49d/429/67249d4295854842079235.webp"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
                 "established": 2024
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 150,
@@ -582,22 +690,28 @@
             }
         },
         {
-            "id": "mirage-2020",
+            "id": "betroom24",
             "rank": "14",
             "name": "BetRoom24",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/BetRoom24.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/BetRoom24.png"
+                "background": "https://static.casino.guru/pict/1355482/betroom_24_casino_homepage_desktop.png?timestamp=1760894899000&imageDataId=1489900"
             },
             "company": {
                 "owner": "Mirage Corporation N.V.",
                 "established": 2020
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,
@@ -621,22 +735,28 @@
             }
         },
         {
-            "id": "versus-odds-2022",
+            "id": "thor-casino",
             "rank": "15",
             "name": "Thor Casino",
             "media": {
                 "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/thor-casino-new-2.png",
-                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/thor-casino-new-2.png"
+                "background": "https://toroslots.com/wp-content/uploads/Thor-Online-Casino.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
                 "established": 2022
             },
-            "licenses": [ "Curaçao (ANT)" ],
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
             "features": {
                 "vpnFriendly": true,
-                "languages": [ "English" ],
-                "liveChat": [ "English" ]
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
             },
             "bonus": {
                 "percentage": 100,

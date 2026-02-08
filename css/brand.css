@@ -231,3 +231,24 @@
         grid-template-columns: 1fr;
     }
 }
+
+.brand-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Ύψος του background */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Να πάει πίσω από όλα */
+    opacity: 0.3; /* Πόσο έντονο θα φαίνεται */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+/* Χρειαζόμαστε το container να είναι relative για να κλειδώσει το background */
+.detail-container {
+    position: relative;
+    z-index: 1;
+    margin-top: 150px; /* Δίνουμε χώρο στην εικόνα να φανεί */
+}

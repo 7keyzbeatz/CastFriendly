@@ -1,4 +1,4 @@
-﻿* {
+﻿﻿* {
     box-sizing: border-box;
     font-family: Inter, system-ui, sans-serif;
 }
@@ -41,32 +41,106 @@ body {
         color: #fff;
     }
 
-/* ================= FILTERS ================= */
-
-.filters {
-    display: flex;
-    gap: 12px;
-    padding: 24px 40px;
-    flex-wrap: wrap;
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-    .filters input,
-    .filters select {
-        background: #0f172a;
-        border: 1px solid #1f2937;
-        color: #fff;
-        padding: 12px 14px;
-        border-radius: 12px;
-        font-size: 14px;
+body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at top, #111827, #0b0e13);
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+
+/* ================= FILTERS SECTION ================= */
+.filters {
+    display: flex;
+    gap: 15px;
+    padding: 25px 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid #1f2937;
+    backdrop-filter: blur(10px);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+
+.filters input,
+.filters select {
+    background: #0f172a;
+    border: 1px solid #1f2937;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+    .filters input:focus,
+    .filters select:focus {
+        border-color: #f5a524;
     }
 
-/* ================= GRID ================= */
+/* Range Slider Styling */
+.range-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #f5a524;
+    font-weight: 700;
+    font-size: 13px;
+    min-width: 240px;
+    background: rgba(245, 165, 36, 0.05);
+    padding: 8px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 165, 36, 0.1);
+}
 
+.range-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+input[type="range"] {
+    accent-color: #f5a524;
+    cursor: pointer;
+    height: 6px;
+}
+
+/* Reset Button */
+.btn-reset {
+    background: #1f2937;
+    color: #fff;
+    border: 1px solid #374151;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 800;
+    transition: all 0.2s;
+}
+
+    .btn-reset:hover {
+        background: #dc2626;
+        border-color: #ef4444;
+        transform: translateY(-1px);
+    }
+
+/* ================= GRID LAYOUT ================= */
 .brands-grid {
-    padding: 20px 40px 60px;
+    padding: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 @media (max-width: 900px) {
@@ -74,386 +148,301 @@ body {
         grid-template-columns: 1fr;
         padding: 20px;
     }
+
+    .filters {
+        padding: 20px;
+        justify-content: center;
+    }
 }
 
-/* ================= CARD ================= */
-
+/* ================= BRAND CARD ================= */
 .brand-card {
     position: relative;
     background: linear-gradient(180deg, #0f172a, #020617);
     border: 1px solid #1f2937;
-    border-radius: 22px;
-    padding: 22px;
-    transition: transform .25s ease, box-shadow .25s ease;
+    border-radius: 26px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
 }
 
     .brand-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 40px rgba(0,0,0,.4);
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        border-color: rgba(245, 165, 36, 0.3);
     }
 
-/* ================= CARD HEADER FIX ================= */
-
+/* CARD HEADER (Logo & Name Side-by-Side) */
 .brand-header-row {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+    margin-bottom: 22px;
 }
 
 .brand-logo {
-    width: 100%;
-    height: 64px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #323c55;
+    border-radius: 18px;
+    padding: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
     .brand-logo img {
-        max-height: 60px;
-        max-width: 180px;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: contain;
     }
 
-/* text κάτω από logo */
+/* Live Chat Dot */
+.online-dot {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 14px;
+    height: 14px;
+    background: #16a34a;
+    border: 3px solid #020617;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #16a34a;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .brand-name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 800;
-    margin: 4px 0 0;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.5px;
 }
 
-.meta {
-    font-size: 12px;
+.brand-meta {
+    font-size: 11px;
     color: #9ca3af;
+    font-weight: 500;
 }
 
-/* ================= RANK ================= */
+.license-text {
+    color: #f5a524;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
+/* ================= BADGES ================= */
 .rank-badge {
     position: absolute;
     top: -14px;
-    left: 20px;
+    left: 22px;
     background: linear-gradient(135deg, #f5a524, #ffb84d);
     color: #000;
     font-weight: 900;
-    padding: 6px 14px;
+    padding: 6px 16px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 13px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(245, 165, 36, 0.3);
 }
 
-/* ================= TAG BASE ================= */
+.card-badges {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
 
-.tag {
-    padding: 4px 12px;
-    font-size: 11px;
-    border-radius: 999px;
+.badge {
+    font-size: 9px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 0.5px;
 }
 
-/* ================= FLOATING TAGS ================= */
-
-.greek-float {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+.badge-lang {
+    background: #2563eb;
     color: #fff;
-    border: 1px solid rgba(255,255,255,.25);
-    box-shadow: 0 4px 12px rgba(37,99,235,.35);
-    z-index: 10;
 }
 
-.vpn-float {
-    position: absolute;
-    top: 52px;
-    right: 18px;
-    background: linear-gradient(135deg, #16a34a, #22c55e);
-    color: #052e16;
-    border: 1px solid rgba(255,255,255,.25);
-    box-shadow: 0 4px 12px rgba(34,197,94,.35);
-    z-index: 10;
+.badge-vpn-yes {
+    background: #16a34a;
+    color: #fff;
+}
+
+.badge-vpn-no {
+    background: #dc2626;
+    color: #fff;
 }
 
 /* ================= BONUS BOX ================= */
-
 .bonus-box {
-    margin: 22px 0;
-    padding: 18px;
-    background: linear-gradient(145deg, #0b1220, #0f1a2e, #141b2f);
-    border: 1px solid rgba(96,165,250,.25);
-    border-radius: 18px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 15px 40px rgba(0,0,0,.6);
+    margin-bottom: 22px;
+    padding: 20px;
+    background: linear-gradient(145deg, #0b1220, #141b2f);
+    border: 1px solid rgba(96,165,250,0.15);
+    border-radius: 20px;
 }
 
 .bonus-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
     .bonus-main span {
         color: #93c5fd;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 800;
+        text-transform: uppercase;
     }
 
     .bonus-main strong {
-        font-size: 34px;
+        font-size: 32px;
         font-weight: 900;
         color: #60a5fa;
-        text-shadow: 0 0 16px rgba(96,165,250,.35);
+        text-shadow: 0 0 15px rgba(96,165,250,0.3);
     }
-
-/* ================= BONUS STATS (STACKED) ================= */
 
 .bonus-sub {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
     .bonus-sub div {
         background: #020617;
-        border: 1px solid rgba(148,163,184,.18);
+        border: 1px solid rgba(148,163,184,0.1);
         border-radius: 14px;
-        padding: 10px 8px;
+        padding: 10px 5px;
         text-align: center;
-        display: flex;
-        flex-direction: column; /* 👈 ΠΑΝΩ / ΚΑΤΩ */
-        justify-content: center;
-        gap: 4px;
     }
 
     .bonus-sub span {
-        font-size: 11px;
+        display: block;
+        font-size: 9px;
         color: #9ca3af;
-        font-weight: 600;
-        letter-spacing: .3px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
     }
 
     .bonus-sub strong {
-        font-size: 16px;
-        font-weight: 900;
+        display: block;
+        font-size: 13px;
         color: #e5e7eb;
     }
 
-/* ================= BUTTON BASE ================= */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 20px;
-    min-height: 44px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: all .15s ease;
-}
-
-    /* ================= MORE INFO BUTTON ================= */
-
-    .btn.ghost {
-        background: rgb(255, 165, 0);
-        border: 1px solid rgb(255, 255, 255);
-        color: rgb(0, 0, 128);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-    }
-
-        .btn.ghost:hover {
-            background: linear-gradient( 180deg, rgba(96,165,250,.18), rgba(96,165,250,.08) );
-            border-color: #60a5fa;
-            color: #fff;
-        }
-
-.brands-grid {
-    align-items: stretch;
-}
-
-.brand-card {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ================= CARD ACTIONS FIX ================= */
-
-.card-actions {
-    margin-top: 18px; /* 👈 απόσταση από withdrawals */
-    display: flex;
-    justify-content: center; /* 👈 κέντρο */
-}
-
-/* ================= TOP RIGHT BADGES ================= */
-
-.card-badges {
-    display: flex;
-    flex-direction: column; /* 👈 ΤΟ ΚΛΕΙΔΙ */
-    align-items: flex-end; /* 👈 δεξιά στο card */
-    gap: 4px;
-}
-
-/* base badge */
-.badge {
-    font-size: 10px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .8px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.25);
-    white-space: nowrap;
-}
-
-/* language badges */
-.badge-lang {
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-    color: #fff;
-}
-
-/* VPN states */
-.badge-vpn-yes {
-    background: linear-gradient(135deg, #16a34a, #22c55e);
-    color: #052e16;
-}
-
-.badge-vpn-no {
-    background: linear-gradient(135deg, #dc2626, #ef4444);
-    color: #3f0a0a;
-}
-
-/* ================= SMALLER VPN BADGE ================= */
-
-/* ================= ANDROID wrap_content VPN ================= */
-
-.badge-vpn-yes,
-.badge-vpn-no {
-    display: inline-flex; /* 👈 wrap_content */
-    align-items: center;
-    justify-content: center;
-    width: auto; /* 👈 ΟΧΙ stretch */
-    min-width: unset;
-    max-width: fit-content;
-    margin-top: 4px;
-    padding: 4px 8px; /* 👈 όσο χρειάζεται */
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: .4px;
-    line-height: 1.2;
-}
-
-/* ================= WITHDRAWALS (BONUS STYLE) ================= */
-
+/* ================= WITHDRAWALS (FIXED ROW) ================= */
 .withdrawals-box {
-    margin-top: 16px;
-}
-
-.withdrawals-title {
-    font-size: 12px;
-    font-weight: 800;
-    color: #93c5fd;
-    margin-bottom: 10px;
-    letter-spacing: .4px;
-    text-transform: uppercase;
-}
-
-/* ίδιο grid με bonus-sub */
-.withdrawals-sub {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-    .withdrawals-sub div {
-        background: #020617;
-        border: 1px solid rgba(148,163,184,.18);
-        border-radius: 14px;
-        padding: 10px 8px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
-    }
-
-    .withdrawals-sub span {
-        font-size: 11px;
-        color: #9ca3af;
-        font-weight: 600;
-    }
-
-    .withdrawals-sub strong {
-        font-size: 16px;
-        font-weight: 900;
-        color: #e5e7eb;
-    }
-
-/* ================= WITHDRAWALS (LIKE BONUS BOX) ================= */
-
-.withdrawals-box {
-    margin-top: 22px;
-    padding: 18px;
-    background: linear-gradient(145deg, #0b1220, #0f1a2e, #141b2f);
-    border: 1px solid rgba(96,165,250,.25);
-    border-radius: 18px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 15px 40px rgba(0,0,0,.6);
+    padding: 20px;
+    background: linear-gradient(145deg, #0b1220, #0f1a2e);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 20px;
 }
 
 .withdrawals-title {
     color: #93c5fd;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: .5px;
     margin-bottom: 14px;
     text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
-/* ίδιο grid με bonus-sub */
 .withdrawals-sub {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    display: flex !important;
+    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
 }
 
     .withdrawals-sub div {
+        flex: 1;
         background: #020617;
-        border: 1px solid rgba(148,163,184,.18);
-        border-radius: 14px;
-        padding: 10px 8px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        border-radius: 12px;
+        padding: 10px 2px;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
+        min-width: 0;
     }
 
     .withdrawals-sub span {
-        font-size: 11px;
+        display: block;
+        font-size: 8px;
         color: #9ca3af;
-        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 4px;
     }
 
     .withdrawals-sub strong {
-        font-size: 16px;
-        font-weight: 900;
-        color: #e5e7eb;
+        display: block;
+        font-size: 11px;
+        color: #fff;
+        white-space: nowrap;
+        font-weight: 700;
     }
 
-/* ================= RESULTS BAR ================= */
-
-.results-bar {
-    padding: 0 40px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    color: #9ca3af;
-    font-weight: 600;
+/* ================= ACTIONS ================= */
+.card-actions {
+    margin-top: auto;
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
 }
 
-/* ================= NO RESULTS ================= */
+.btn.ghost {
+    background: linear-gradient(135deg, #f5a524 0%, #ff8c00 100%);
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 14px 45px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(245, 165, 36, 0.2);
+}
+
+    .btn.ghost:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(245, 165, 36, 0.4);
+    }
+
+/* Ειδικά για το More Info κουμπί */
+.btn-info {
+    background: #264774 !important; /* Το μπλε που επέλεξες */
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(38, 71, 116, 0.4) !important; /* Μπλε shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .btn-info:hover {
+        transform: scale(1.05);
+        /* Δυνατό μπλε glow στο hover */
+        box-shadow: 0 8px 25px rgba(38, 71, 116, 0.6) !important;
+        background: #2d5386 !important; /* Ελαφρώς πιο ανοιχτό μπλε στο hover */
+    }
+
+/* ================= UTILS ================= */
 
 .no-results {
     padding: 60px 20px;
@@ -469,6 +458,7 @@ body {
 
 .results-bar {
     padding: 0 40px;
+    margin-top: 16px;
     margin-bottom: 10px;
     font-size: 13px;
     color: #9ca3af;

@@ -1,0 +1,231 @@
+﻿/* ================= BRAND DETAILS PAGE ================= */
+
+/* Το ημιφανές background που σβήνει προς τα κάτω */
+.brand-hero-bg {
+    position: fixed; /* Κλειδωμένο πίσω */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+    opacity: 0.25; /* Ρύθμισε το πόσο έντονο το θες */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+}
+
+.detail-container {
+    max-width: 1000px;
+    margin: 120px auto 50px auto; /* Χώρος για να φαίνεται η εικόνα πάνω */
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glassmorphism εφέ στο Header */
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(15, 23, 42, 0.6); /* Ημιδιάφανο μπλε-μαύρο */
+    backdrop-filter: blur(12px); /* Το θόλωμα που κάνει το εφέ "γυαλί" */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.detail-logo {
+    width: 140px;
+    height: 140px;
+    background: #0d1420;
+    border-radius: 24px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Περιεχόμενο Review */
+.review-content {
+    background: rgba(11, 14, 19, 0.8);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.8;
+}
+
+    .review-content h2 {
+        color: #f5a524;
+        font-size: 24px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+/* CTA Box - Το κουτί της εγγραφής */
+.cta-box {
+    margin-top: 40px;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(245, 165, 36, 0.1), rgba(0,0,0,0));
+    border: 2px solid #f5a524;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(245, 165, 36, 0.1);
+}
+
+.big-btn {
+    display: inline-block;
+    padding: 20px 80px;
+    background: linear-gradient(135deg, #f5a524, #ff8c00);
+    color: #000;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 999px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+    .big-btn:hover {
+        transform: scale(1.08) translateY(-5px);
+        box-shadow: 0 15px 35px rgba(245, 165, 36, 0.4);
+    }
+
+.withdrawals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-card {
+    background: rgba(31, 41, 55, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+    .info-card span {
+        display: block;
+        font-size: 12px;
+        color: #9ca3af;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .info-card strong {
+        font-size: 18px;
+        color: #fff;
+    }
+
+/* Ρύθμιση για να μην καλύπτει το topbar */
+.brand-hero-bg {
+    position: fixed;
+    top: 70px; /* Όσο είναι το ύψος του topbar σου */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+    opacity: 0.2; /* Το χαμηλώνουμε λίγο για να μη "χτυπάει" στο μάτι */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+/* Το κουμπί "Πίσω στα Brands" */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+    .back-btn:hover {
+        color: #fff;
+        background: rgba(245, 165, 36, 0.1);
+        border-color: rgba(245, 165, 36, 0.3);
+        box-shadow: 0 0 15px rgba(245, 165, 36, 0.1);
+        transform: translateX(-5px); /* Μικρό εφέ κίνησης προς τα πίσω */
+    }
+
+    /* Προσθήκη βέλους πριν το κείμενο */
+    .back-btn::before {
+        content: "←";
+        font-size: 18px;
+    }
+
+/* Ρύθμιση για να ξεκινάει η εικόνα ΚΑΤΩ από τη γραμμή του topbar */
+.brand-hero-bg {
+    position: fixed;
+    top: 71px; /* Προσαρμογή ώστε να εφάπτεται ακριβώς κάτω από τη διαχωριστική γραμμή */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+    opacity: 0.2;
+    /* Εφέ σβησίματος */
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 85%);
+    /* ΕΝΕΡΓΟΠΟΙΗΣΗ ΚΙΝΗΣΗΣ */
+    animation: bgFloat 20s ease-in-out infinite;
+}
+
+/* Το εφέ της ελαφριάς κίνησης (Slow Floating) */
+@keyframes bgFloat {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.05) translateY(-20px); /* Μικρό ζουμ και ανέβασμα */
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f5a524;
+    padding: 10px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+    .back-btn:hover {
+        background: #f5a524;
+        color: #000;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(245, 165, 36, 0.4);
+    }
