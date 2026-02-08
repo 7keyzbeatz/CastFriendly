@@ -280,9 +280,13 @@ body {
     flex-direction: column;
 }
 
-    .brand-card .btn {
-        margin-top: auto; /* 👈 σπρώχνει το κουμπί κάτω */
-    }
+/* ================= CARD ACTIONS FIX ================= */
+
+.card-actions {
+    margin-top: 18px; /* 👈 απόσταση από withdrawals */
+    display: flex;
+    justify-content: center; /* 👈 κέντρο */
+}
 
 /* ================= TOP RIGHT BADGES ================= */
 
@@ -341,3 +345,100 @@ body {
     letter-spacing: .4px;
     line-height: 1.2;
 }
+
+/* ================= WITHDRAWALS (BONUS STYLE) ================= */
+
+.withdrawals-box {
+    margin-top: 16px;
+}
+
+.withdrawals-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #93c5fd;
+    margin-bottom: 10px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+/* ίδιο grid με bonus-sub */
+.withdrawals-sub {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+    .withdrawals-sub div {
+        background: #020617;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 10px 8px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .withdrawals-sub span {
+        font-size: 11px;
+        color: #9ca3af;
+        font-weight: 600;
+    }
+
+    .withdrawals-sub strong {
+        font-size: 16px;
+        font-weight: 900;
+        color: #e5e7eb;
+    }
+
+/* ================= WITHDRAWALS (LIKE BONUS BOX) ================= */
+
+.withdrawals-box {
+    margin-top: 22px;
+    padding: 18px;
+    background: linear-gradient(145deg, #0b1220, #0f1a2e, #141b2f);
+    border: 1px solid rgba(96,165,250,.25);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 15px 40px rgba(0,0,0,.6);
+}
+
+.withdrawals-title {
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+/* ίδιο grid με bonus-sub */
+.withdrawals-sub {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+    .withdrawals-sub div {
+        background: #020617;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 10px 8px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .withdrawals-sub span {
+        font-size: 11px;
+        color: #9ca3af;
+        font-weight: 600;
+    }
+
+    .withdrawals-sub strong {
+        font-size: 16px;
+        font-weight: 900;
+        color: #e5e7eb;
+    }

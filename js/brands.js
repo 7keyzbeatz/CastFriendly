@@ -108,6 +108,40 @@ function renderBrands() {
 
 
 
+    ${b.withdrawals ? `
+  <div class="withdrawals-box">
+    <div class="withdrawals-title">Withdrawals</div>
+
+    <div class="withdrawals-sub">
+      <div>
+        <span>Weekly</span>
+        <strong>
+          ${b.withdrawals.perWeek
+                        ? `€${b.withdrawals.perWeek.amount.toLocaleString()}`
+                        : "N/A"}
+        </strong>
+      </div>
+
+      <div>
+        <span>Monthly</span>
+        <strong>
+          ${b.withdrawals.perMonth
+                        ? `€${b.withdrawals.perMonth.amount.toLocaleString()}`
+                        : "N/A"}
+        </strong>
+      </div>
+    </div>
+  </div>
+  ` : `
+  <div class="withdrawals-box">
+    <div class="withdrawals-title">Withdrawals</div>
+    <div class="withdrawals-sub">
+      <div><span>Weekly</span><strong>N/A</strong></div>
+      <div><span>Monthly</span><strong>N/A</strong></div>
+    </div>
+  </div>
+  `}
+
   <div class="card-actions">
     ${b.summary ? `<button class="btn ghost" data-desc>Description</button>` : ""}
     <a class="btn ghost" href="brand.html?id=${b.id}">More Info</a>
