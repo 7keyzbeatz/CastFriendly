@@ -5,194 +5,209 @@
 
 body {
     margin: 0;
-    background: #020617;
+    background: radial-gradient(1200px 600px at top, #111827, #0b0e13);
     color: #e5e7eb;
 }
 
-/* ================= TOPBAR ================= */
-
+/* TOPBAR */
 .topbar {
-    border-bottom: 1px solid rgba(245,165,36,.4);
-}
-
-.topbar-inner {
-    max-width: 1300px;
-    margin: auto;
-    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #1f2937;
+    background: rgba(2,6,23,.7);
+    backdrop-filter: blur(8px);
 }
 
-.logo-wrap img {
-    height: 50px;
-    border-radius: 50%;
+.logo {
+    font-weight: 900;
+    font-size: 22px;
 }
 
-.menu a {
-    color: #d1d5db;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-    .menu a.active,
-    .menu a:hover {
+    .logo span {
         color: #f5a524;
     }
 
-.socials img {
-    height: 20px;
-    margin-left: 12px;
-    opacity: .8;
+.topbar nav a {
+    color: #9ca3af;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* ================= HERO ================= */
+    .topbar nav a.active,
+    .topbar nav a:hover {
+        color: #fff;
+    }
 
+/* HERO */
 .hero {
     position: relative;
-    background: url("../img/bg.jpg") center/cover no-repeat;
-    min-height: 520px;
+    height: 70vh; /* 👈 ΟΧΙ full screen */
+    max-height: 720px; /* 👈 pro limit */
+    background: url("../img/logo-home-page-1024x912.png") center/110% no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    animation: hero-pan 20s ease-in-out infinite;
+}
+
+@keyframes hero-pan {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 55% 45%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient( 90deg, rgba(2,6,23,.95), rgba(2,6,23,.85), rgba(2,6,23,.4) );
+    background: linear-gradient( 90deg, rgba(2,6,23,.92), rgba(2,6,23,.65), rgba(2,6,23,.35) );
+    backdrop-filter: blur(1.5px);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(2,6,23,0), #020617);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 1100px;
-    margin: auto;
-    padding: 80px 24px;
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 50px;
+    max-width: 720px;
+    padding: 60px;
 }
 
-/* ================= ABOUT CARD ================= */
-
-.about-card {
-    background: rgba(0,0,0,.45);
-    border: 1px solid #1f2937;
-    border-radius: 24px;
-    padding: 24px;
-    text-align: center;
-}
-
-.about-img {
-    width: 100%;
-    border-radius: 18px;
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
     margin-bottom: 14px;
 }
 
-.about-icons img {
-    height: 22px;
-    margin: 10px 6px 0;
-}
-
-/* ================= SKILLS ================= */
-
-.about-text h2 {
-    margin-bottom: 24px;
-}
-
-.skill {
-    margin-bottom: 14px;
-}
-
-    .skill span {
-        font-size: 13px;
-        font-weight: 700;
+    .hero h1 span {
+        color: #f5a524;
     }
 
-.bar {
-    height: 8px;
-    background: #020617;
+.hero p {
+    font-size: 16px;
+    color: #cbd5f5;
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+/* SOCIALS */
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.soc {
+    padding: 10px 16px;
     border-radius: 999px;
-    margin-top: 6px;
-    overflow: hidden;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
 }
 
-    .bar i {
-        display: block;
-        height: 100%;
-        background: linear-gradient(90deg,#f5a524,#ffb84d);
-    }
+.twitch {
+    background: #9146ff;
+}
 
-/* ================= CONTENT ================= */
+.discord {
+    background: #5865f2;
+}
 
-.content {
+.insta {
+    background: #e1306c;
+}
+
+.yt {
+    background: #ff0000;
+}
+
+.fb {
+    background: #1877f2;
+}
+
+.tt {
+    background: #000;
+}
+
+/* SECTION */
+.home-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-card {
+    width: 100%;
     max-width: 900px;
-    margin: 80px auto;
-    padding: 0 24px;
-    text-align: center;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #1f2937;
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
 }
 
-    .content h3 {
+    .home-card h2 {
+        margin-top: 0;
         font-size: 26px;
-        margin-bottom: 18px;
     }
 
-/* ================= FOOTER ================= */
+    .home-card p {
+        color: #9ca3af;
+        line-height: 1.6;
+    }
 
+/* STATS */
+.stats {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 14px;
+}
+
+    .stats div {
+        background: #020617;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
+    }
+
+    .stats span {
+        font-size: 11px;
+        color: #9ca3af;
+    }
+
+    .stats strong {
+        display: block;
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+/* FOOTER */
 .footer {
-    border-top: 1px solid #1f2937;
     padding: 40px 20px;
     text-align: center;
-    font-size: 14px;
-}
-
-.footer-icons img {
-    height: 28px;
-    margin: 0 8px 12px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 900px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-.content h4 {
-    margin-top: 28px;
-    font-size: 20px;
-    color: #f5a524;
-}
-
-.home-list {
-    margin: 20px auto;
-    max-width: 760px;
-    text-align: left;
-    line-height: 1.8;
-    color: #d1d5db;
-}
-
-    .home-list li {
-        margin-bottom: 12px;
-    }
-
-.home-highlight {
-    margin-top: 30px;
-    padding: 22px;
-    background: linear-gradient( 135deg, rgba(245,165,36,.12), rgba(0,0,0,.3) );
-    border: 1px solid rgba(245,165,36,.35);
-    border-radius: 18px;
-    font-size: 16px;
-}
-.hero-brand {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero-brand img {
-    max-width: 280px;
-    width: 100%;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.6));
+    font-size: 13px;
+    color: #9ca3af;
 }
