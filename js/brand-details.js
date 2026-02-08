@@ -9,7 +9,7 @@ fetch("data/brands.json")
         const brand = data.brands.find(b => b.id === brandId || b.name.toLowerCase().replace(/\s+/g, '-') === brandId);
 
         if (!brand) {
-            detailContainer.innerHTML = "<h1>Brand not found</h1>";
+            detailContainer.innerHTML = "<h1 style='text-align:center; padding-top:50px;'>Brand not found</h1>";
             return;
         }
 
@@ -17,7 +17,6 @@ fetch("data/brands.json")
     });
 
 function renderDetails(brand) {
-
     document.title = `${brand.name} | Details`;
 
     const bgImg = brand.media?.background || '';
@@ -43,7 +42,7 @@ function renderDetails(brand) {
             <h2 style="margin-top:30px;">🎁 Bonus Πληροφορίες</h2>
             <ul>
                 <li><strong>Ποσοστό:</strong> ${brand.bonus.percentage}%</li>
-                <li><strong>Μέγιστο Ποσό:</strong> ${brand.bonus.maxAmount}€</li>
+                <li><strong>Μέγιστο Ποσό:</strong> ${brand.bonus.maxAmount.toLocaleString('el-GR')}€</li>
                 <li><strong>Free Spins:</strong> ${brand.bonus.freeSpins}</li>
                 <li><strong>Wager:</strong> x${brand.bonus.wager}</li>
             </ul>
@@ -52,11 +51,11 @@ function renderDetails(brand) {
             <div class="withdrawals-grid">
                 <div class="info-card">
                     <span>Daily</span>
-                    <strong>${brand.withdrawals.perDay ? brand.withdrawals.perDay.amount.toLocaleString() + ' ' + brand.withdrawals.perDay.currency : 'N/A'}</strong>
+                    <strong>${brand.withdrawals.perDay ? brand.withdrawals.perDay.amount.toLocaleString('el-GR') + ' €' : 'N/A'}</strong>
                 </div>
                 <div class="info-card">
                     <span>Monthly</span>
-                    <strong>${brand.withdrawals.perMonth ? brand.withdrawals.perMonth.amount.toLocaleString() + ' ' + brand.withdrawals.perMonth.currency : 'N/A'}</strong>
+                    <strong>${brand.withdrawals.perMonth ? brand.withdrawals.perMonth.amount.toLocaleString('el-GR') + ' €' : 'N/A'}</strong>
                 </div>
             </div>
 

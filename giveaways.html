@@ -1,35 +1,116 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <title>CasinoDeals | Giveaways</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <style>
+        /* Κεντράρισμα όλης της σελίδας */
+        .construction-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .construction-card {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            border: 2px dashed #f5a524;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(245, 165, 36, 0.1);
+        }
+
+            .construction-card h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+                color: #fff;
+            }
+
+            .construction-card p {
+                font-size: 1.2rem;
+                color: #9ca3af;
+                margin-bottom: 25px;
+            }
+
+        .by-tag {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f5a524;
+            background: rgba(245, 165, 36, 0.1);
+            padding: 5px 15px;
+            border-radius: 999px;
+            display: inline-block;
+        }
+
+        /* Animation για το εικονίδιο */
+        .loader-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="nav-inner">
-            <div class="logo">Casino<span>Deals</span></div>
-            <div class="menu">
-                <a href="home.html">Home</a>
-                <a href="brands.html">Brands</a>
-                <a href="giveaways.html">Giveaways</a>
-                <a href="rules.html">Rules</a>
-            </div>
-        </div>
-    </nav>
+    <header class="topbar">
+        <div class="logo">7he<span>God</span>Familia</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="brands.html">Brands</a>
+            <a href="giveaways.html" class="active">Giveaways</a>
+            <a href="rules.html">Rules</a>
+        </nav>
+    </header>
 
-    <section>
-        <h1>Giveaways</h1>
+    <div style="height: 80px;"></div>
 
-        <div class="card">
-            🎁 Weekly giveaways coming soon
+    <div class="construction-wrapper">
+        <div class="construction-card">
+            <span class="loader-icon">⚙️</span>
+            <h1>UNDER CONSTRUCTION</h1>
+            <p>Επππ, ατύχισες, ετοιμάζω ακόμα αυτή την σελίδα. <br> Μείνε συντονισμένος!</p>
+            <div class="by-tag">by 7Keyz Beatz</div>
         </div>
+    </div>
 
-        <div class="card">
-            💰 VIP rewards for active members
+    <div class="music-container">
+        <button id="musicToggle" class="music-btn">
+            <span id="musicIcon">🎵</span>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="music/track.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="music-container">
+            <button id="musicToggle" class="music-btn">
+                <span id="musicIcon">🎵</span>
+            </button>
+            <audio id="bgMusic" loop>
+                <source src="music/track.mp3" type="audio/mpeg">
+            </audio>
         </div>
-    </section>
+    </div>
+
+    <script src="js/home.js"></script>
 
 </body>
 </html>
