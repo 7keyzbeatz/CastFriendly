@@ -65,7 +65,7 @@ body {
 .brands-grid {
     padding: 20px 40px 60px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 28px;
 }
 
@@ -79,11 +79,11 @@ body {
 /* ================= CARD ================= */
 
 .brand-card {
+    position: relative;
     background: linear-gradient(180deg, #0f172a, #020617);
     border: 1px solid #1f2937;
     border-radius: 22px;
     padding: 22px;
-    position: relative;
     transition: transform .25s ease, box-shadow .25s ease;
 }
 
@@ -91,6 +91,40 @@ body {
         transform: translateY(-4px);
         box-shadow: 0 20px 40px rgba(0,0,0,.4);
     }
+
+/* ================= CARD HEADER FIX ================= */
+
+.brand-header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.brand-logo {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+    .brand-logo img {
+        max-height: 60px;
+        max-width: 180px;
+        object-fit: contain;
+    }
+
+/* text κάτω από logo */
+.brand-name {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 4px 0 0;
+}
+
+.meta {
+    font-size: 12px;
+    color: #9ca3af;
+}
 
 /* ================= RANK ================= */
 
@@ -106,100 +140,50 @@ body {
     font-size: 14px;
 }
 
-/* ================= LOGO ================= */
-
-.brand-logo {
-    height: 64px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-    .brand-logo img {
-        max-height: 100%;
-        max-width: 180px;
-        object-fit: contain;
-    }
-
-/* ================= TEXT ================= */
-
-.brand-name {
-    font-size: 19px;
-    font-weight: 800;
-    margin: 10px 0 6px;
-}
-
-.meta {
-    font-size: 13px;
-    color: #9ca3af;
-}
-
-/* ================= STATS ================= */
-
-.stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 18px 0;
-    font-size: 14px;
-}
-
-    .stats strong {
-        color: #fff;
-    }
-
-/* ================= TAGS ================= */
-
-.tags {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-}
+/* ================= TAG BASE ================= */
 
 .tag {
     padding: 4px 12px;
-    font-size: 12px;
-    border-radius: 999px;
-    font-weight: 700;
-}
-
-.vpn {
-    background: rgba(34,197,94,.15);
-    color: #22c55e;
-}
-
-.lang {
-    background: rgba(96,165,250,.15);
-    color: #60a5fa;
-}
-
-/* ================= CTA ================= */
-
-.cta {
-    display: block;
-    text-align: center;
-    background: linear-gradient(135deg, #f5a524, #ffb84d);
-    color: #000;
-    padding: 14px;
+    font-size: 11px;
     border-radius: 999px;
     font-weight: 900;
-    text-decoration: none;
-    transition: transform .15s ease, box-shadow .15s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-    .cta:hover {
-        transform: scale(1.02);
-        box-shadow: 0 10px 30px rgba(245,165,36,.35);
-    }
+/* ================= FLOATING TAGS ================= */
+
+.greek-float {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 4px 12px rgba(37,99,235,.35);
+    z-index: 10;
+}
+
+.vpn-float {
+    position: absolute;
+    top: 52px;
+    right: 18px;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #052e16;
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 4px 12px rgba(34,197,94,.35);
+    z-index: 10;
+}
 
 /* ================= BONUS BOX ================= */
 
 .bonus-box {
     margin: 22px 0;
     padding: 18px;
-    background: linear-gradient(135deg, rgba(245,165,36,.12), rgba(0,0,0,.2));
-    border: 1px solid rgba(245,165,36,.25);
+    background: linear-gradient(145deg, #0b1220, #0f1a2e, #141b2f);
+    border: 1px solid rgba(96,165,250,.25);
     border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 15px 40px rgba(0,0,0,.6);
 }
 
 .bonus-main {
@@ -210,17 +194,19 @@ body {
 }
 
     .bonus-main span {
-        font-size: 14px;
-        color: #f5a524;
-        font-weight: 700;
-        letter-spacing: .5px;
+        color: #93c5fd;
+        font-size: 13px;
+        font-weight: 800;
     }
 
     .bonus-main strong {
         font-size: 34px;
         font-weight: 900;
-        color: #f5a524;
+        color: #60a5fa;
+        text-shadow: 0 0 16px rgba(96,165,250,.35);
     }
+
+/* ================= BONUS STATS (STACKED) ================= */
 
 .bonus-sub {
     display: grid;
@@ -230,95 +216,128 @@ body {
 
     .bonus-sub div {
         background: #020617;
-        border: 1px solid #1f2937;
+        border: 1px solid rgba(148,163,184,.18);
         border-radius: 14px;
-        padding: 10px;
+        padding: 10px 8px;
         text-align: center;
+        display: flex;
+        flex-direction: column; /* 👈 ΠΑΝΩ / ΚΑΤΩ */
+        justify-content: center;
+        gap: 4px;
     }
 
     .bonus-sub span {
-        display: block;
-        font-size: 12px;
+        font-size: 11px;
         color: #9ca3af;
-        margin-bottom: 4px;
+        font-weight: 600;
+        letter-spacing: .3px;
     }
 
     .bonus-sub strong {
-        font-size: 15px;
-        font-weight: 800;
-        color: #fff;
-    }
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-    .bonus-sub {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* ================= ACTION BUTTONS ================= */
-
-.card-actions {
-    display: flex;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.btn {
-    flex: 1;
-    padding: 14px;
-    border-radius: 999px;
-    font-weight: 800;
-    cursor: pointer;
-    border: none;
-    font-size: 14px;
-}
-
-    .btn.primary {
-        background: linear-gradient(135deg, #f5a524, #ffb84d);
-        color: #000;
-    }
-
-        .btn.primary:hover {
-            transform: scale(1.03);
-        }
-
-    .btn.ghost {
-        background: transparent;
-        border: 1px solid #1f2937;
+        font-size: 16px;
+        font-weight: 900;
         color: #e5e7eb;
     }
 
+/* ================= BUTTON BASE ================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    min-height: 44px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all .15s ease;
+}
+
+    /* ================= MORE INFO BUTTON ================= */
+
+    .btn.ghost {
+        background: rgb(255, 165, 0);
+        border: 1px solid rgb(255, 255, 255);
+        color: rgb(0, 0, 128);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
         .btn.ghost:hover {
-            background: #020617;
+            background: linear-gradient( 180deg, rgba(96,165,250,.18), rgba(96,165,250,.08) );
+            border-color: #60a5fa;
+            color: #fff;
         }
 
-/* ================= DESCRIPTION ================= */
-
-.description {
-    margin-top: 18px;
-    padding: 16px;
-    background: #020617;
-    border: 1px solid #1f2937;
-    border-radius: 14px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #d1d5db;
-    animation: fadeIn .25s ease;
+.brands-grid {
+    align-items: stretch;
 }
 
-.hidden {
-    display: none;
+.brand-card {
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-4px);
+    .brand-card .btn {
+        margin-top: auto; /* 👈 σπρώχνει το κουμπί κάτω */
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ================= TOP RIGHT BADGES ================= */
+
+.card-badges {
+    display: flex;
+    flex-direction: column; /* 👈 ΤΟ ΚΛΕΙΔΙ */
+    align-items: flex-end; /* 👈 δεξιά στο card */
+    gap: 4px;
+}
+
+/* base badge */
+.badge {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.25);
+    white-space: nowrap;
+}
+
+/* language badges */
+.badge-lang {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+}
+
+/* VPN states */
+.badge-vpn-yes {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #052e16;
+}
+
+.badge-vpn-no {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: #3f0a0a;
+}
+
+/* ================= SMALLER VPN BADGE ================= */
+
+/* ================= ANDROID wrap_content VPN ================= */
+
+.badge-vpn-yes,
+.badge-vpn-no {
+    display: inline-flex; /* 👈 wrap_content */
+    align-items: center;
+    justify-content: center;
+    width: auto; /* 👈 ΟΧΙ stretch */
+    min-width: unset;
+    max-width: fit-content;
+    margin-top: 4px;
+    padding: 4px 8px; /* 👈 όσο χρειάζεται */
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .4px;
+    line-height: 1.2;
 }

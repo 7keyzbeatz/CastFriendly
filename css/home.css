@@ -1,0 +1,198 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+    border-bottom: 1px solid rgba(245,165,36,.4);
+}
+
+.topbar-inner {
+    max-width: 1300px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-wrap img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.menu a {
+    color: #d1d5db;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+    .menu a.active,
+    .menu a:hover {
+        color: #f5a524;
+    }
+
+.socials img {
+    height: 20px;
+    margin-left: 12px;
+    opacity: .8;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+    background: url("../img/bg.jpg") center/cover no-repeat;
+    min-height: 520px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, rgba(2,6,23,.95), rgba(2,6,23,.85), rgba(2,6,23,.4) );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 50px;
+}
+
+/* ================= ABOUT CARD ================= */
+
+.about-card {
+    background: rgba(0,0,0,.45);
+    border: 1px solid #1f2937;
+    border-radius: 24px;
+    padding: 24px;
+    text-align: center;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 14px;
+}
+
+.about-icons img {
+    height: 22px;
+    margin: 10px 6px 0;
+}
+
+/* ================= SKILLS ================= */
+
+.about-text h2 {
+    margin-bottom: 24px;
+}
+
+.skill {
+    margin-bottom: 14px;
+}
+
+    .skill span {
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+.bar {
+    height: 8px;
+    background: #020617;
+    border-radius: 999px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+    .bar i {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg,#f5a524,#ffb84d);
+    }
+
+/* ================= CONTENT ================= */
+
+.content {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+    .content h3 {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+/* ================= FOOTER ================= */
+
+.footer {
+    border-top: 1px solid #1f2937;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-icons img {
+    height: 28px;
+    margin: 0 8px 12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.content h4 {
+    margin-top: 28px;
+    font-size: 20px;
+    color: #f5a524;
+}
+
+.home-list {
+    margin: 20px auto;
+    max-width: 760px;
+    text-align: left;
+    line-height: 1.8;
+    color: #d1d5db;
+}
+
+    .home-list li {
+        margin-bottom: 12px;
+    }
+
+.home-highlight {
+    margin-top: 30px;
+    padding: 22px;
+    background: linear-gradient( 135deg, rgba(245,165,36,.12), rgba(0,0,0,.3) );
+    border: 1px solid rgba(245,165,36,.35);
+    border-radius: 18px;
+    font-size: 16px;
+}
+.hero-brand {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-brand img {
+    max-width: 280px;
+    width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.6));
+}

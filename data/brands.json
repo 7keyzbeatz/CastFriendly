@@ -48,10 +48,10 @@
         {
             "id": "casino-b",
             "rank": "B",
-            "name": "Casino B",
+            "name": "FreeSpinz",
             "media": {
-                "logo": "img/logos/casino-b.png",
-                "background": "img/bg/casino-b.jpg"
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2026/02/removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2026/02/removebg-preview.png"
             },
             "company": {
                 "owner": "Pacific Odds S.R.L.",
@@ -84,10 +84,10 @@
         {
             "id": "latcas",
             "rank": "1",
-            "name": "LATCAS Casino",
+            "name": "SlotsGem",
             "media": {
-                "logo": "img/logos/latcas.png",
-                "background": "img/bg/latcas.jpg"
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/09/photo_2025-09-10_22-35-36-removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/09/photo_2025-09-10_22-35-36-removebg-preview.png"
             },
             "company": {
                 "owner": "LATCAS B.V.",
@@ -124,10 +124,10 @@
         {
             "id": "gbl",
             "rank": "2",
-            "name": "GBL Casino",
+            "name": "SpinLine",
             "media": {
-                "logo": "img/logos/gbl.png",
-                "background": "img/bg/gbl.jpg"
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/10/spinline-casino.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/10/spinline-casino.png"
             },
             "company": {
                 "owner": "GBL Solutions N.V.",
@@ -164,10 +164,10 @@
         {
             "id": "madial",
             "rank": "3",
-            "name": "Madial Casino",
+            "name": "Roll Casino",
             "media": {
-                "logo": "img/logos/madial.png",
-                "background": "img/bg/madial.jpg"
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/07/photo_2025-07-11_18-51-50-removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/07/photo_2025-07-11_18-51-50-removebg-preview.png"
             },
             "company": {
                 "owner": "Madial N.V.",
@@ -203,10 +203,10 @@
         {
             "id": "moonlite-2008",
             "rank": "4",
-            "name": "Moonlite Casino",
+            "name": "Leon",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/leon-casino.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/leon-casino.png"
             },
             "company": {
                 "owner": "Moonlite N.V.",
@@ -239,10 +239,10 @@
         {
             "id": "versus-odds-2020",
             "rank": "5",
-            "name": "Versus Odds Casino",
+            "name": "Wolfy Casino",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/Wolfy-casino-Logo-2048x610.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/Wolfy-casino-Logo-2048x610.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
@@ -278,10 +278,10 @@
         {
             "id": "lyntec",
             "rank": "6",
-            "name": "Lyntec Casino",
+            "name": "True Luck",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/04/True-luck-logo-removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/04/True-luck-logo-removebg-preview.png"
             },
             "company": {
                 "owner": "Lyntec Limited",
@@ -317,10 +317,10 @@
         {
             "id": "moonlite-2017",
             "rank": "7",
-            "name": "Moonlite Casino",
+            "name": "Twin",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/twin-casino.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/twin-casino.png"
             },
             "company": {
                 "owner": "Moonlite N.V.",
@@ -353,10 +353,10 @@
         {
             "id": "versus-odds-2023",
             "rank": "8",
-            "name": "Versus Odds Casino",
+            "name": "Stupid Casino",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/StupidCasino_logo-2048x922.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/StupidCasino_logo-2048x922.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
@@ -392,10 +392,10 @@
         {
             "id": "leva-2025",
             "rank": "9",
-            "name": "Leva Casino",
+            "name": "7 Play",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/06/images__1_-removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/06/images__1_-removebg-preview.png"
             },
             "company": {
                 "owner": "Leva Ltd",
@@ -431,10 +431,10 @@
         {
             "id": "zephyr-2025",
             "rank": "10",
-            "name": "Zephyr Casino",
+            "name": "Holly Luck",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2025/11/holy-removebg-preview.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2025/11/holy-removebg-preview.png"
             },
             "company": {
                 "owner": "Zephyr Holding Sociedad De Responsabilidad Limitada",
@@ -470,10 +470,10 @@
         {
             "id": "twicedice-2023",
             "rank": "11",
-            "name": "TwiceDice Casino",
+            "name": "Hit' N' Spin",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/hitnspin-casino.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/hitnspin-casino.png"
             },
             "company": {
                 "owner": "TwiceDice B.V.",
@@ -506,10 +506,10 @@
         {
             "id": "versus-odds-2024-basic",
             "rank": "12",
-            "name": "Versus Odds Casino",
+            "name": "CasinoStars",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/casinostars-new.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/casinostars-new.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
@@ -545,10 +545,10 @@
         {
             "id": "versus-odds-2024-vpn",
             "rank": "13",
-            "name": "Versus Odds Casino",
+            "name": "Casino Orca",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/10/casino-orca-new.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/10/casino-orca-new.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",
@@ -584,10 +584,10 @@
         {
             "id": "mirage-2020",
             "rank": "14",
-            "name": "Mirage Casino",
+            "name": "BetRoom24",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/BetRoom24.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/BetRoom24.png"
             },
             "company": {
                 "owner": "Mirage Corporation N.V.",
@@ -623,10 +623,10 @@
         {
             "id": "versus-odds-2022",
             "rank": "15",
-            "name": "Versus Odds Casino",
+            "name": "Thor Casino",
             "media": {
-                "logo": "",
-                "background": ""
+                "logo": "https://7hegodfamilia.com/wp-content/uploads/2024/09/thor-casino-new-2.png",
+                "background": "https://7hegodfamilia.com/wp-content/uploads/2024/09/thor-casino-new-2.png"
             },
             "company": {
                 "owner": "Versus Odds B.V.",

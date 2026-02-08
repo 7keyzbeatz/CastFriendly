@@ -65,15 +65,33 @@ function renderBrands() {
             card.innerHTML = `
   <div class="rank-badge">${b.rank}</div>
 
-  <div class="brand-header-row">
-    <div class="brand-logo">
-      <img src="${b.media.logo}" alt="${b.name}">
-    </div>
-    <div>
-      <div class="brand-name">${b.name}</div>
-      <div class="meta">${b.company.owner} • Est. ${b.company.established}</div>
-    </div>
+    <div class="card-badges">
+    ${
+                (() => {
+                    const langs = b.features.languages || [];
+                    if (langs.includes("Greek") && langs.includes("English"))
+                        return `<span class="badge badge-lang">Greek / English</span>`;
+                    if (langs.includes("Greek"))
+                        return `<span class="badge badge-lang">Greek</span>`;
+                    if (langs.includes("English"))
+                        return `<span class="badge badge-lang">English</span>`;
+                    return "";
+                })()
+                }
+
+    <span class="badge ${b.features.vpnFriendly ? "badge-vpn-yes" : "badge-vpn-no"}">
+      VPN
+    </span>
   </div>
+
+  <div class="brand-header-row">
+  <div class="brand-logo">
+    <img src="${b.media.logo}" alt="${b.name}">
+  </div>
+
+  <div class="brand-name">${b.name}</div>
+  <div class="meta">${b.company.owner} • Est. ${b.company.established}</div>
+</div>
 
   <div class="bonus-box">
     <div class="bonus-main">
@@ -88,14 +106,11 @@ function renderBrands() {
     </div>
   </div>
 
-  <div class="tags">
-    ${b.features.vpnFriendly ? `<span class="tag vpn">VPN</span>` : ""}
-    ${b.features.languages.includes("Greek") ? `<span class="tag lang">Greek</span>` : ""}
-  </div>
+
 
   <div class="card-actions">
     ${b.summary ? `<button class="btn ghost" data-desc>Description</button>` : ""}
-    <a class="btn primary" href="brand.html?id=${b.id}">More Info</a>
+    <a class="btn ghost" href="brand.html?id=${b.id}">More Info</a>
   </div>
 
   ${b.summary ? `<div class="description hidden">${b.summary}</div>` : ""}
