@@ -1,0 +1,813 @@
+{
+    "meta": {
+        "version": "1.16",
+        "lastUpdated": "2026-02-10 23:23:33",
+        "defaultCurrency": "EUR"
+    },
+    "brands": [
+        {
+            "id": "A",
+            "name": "Spinorhino Casino",
+            "description": "Το SlotsGem είναι ένας κορυφαίος προορισμός για slots με τεράστια ποικιλία παρόχων και άμεσες πληρωμές. Ιδανικό για παίκτες που ζητούν υψηλά bonus και ασφάλεια.",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2026\/02\/spinorhinoo-removebg-preview.png",
+                "background": "https:\/\/screenshot.slotcatalog.com\/userfiles\/image\/casino\/spinorhino\/spinorhino-GR-20260203.jpg"
+            },
+            "company": {
+                "owner": "JETRHOLOCO LIMITADA",
+                "established": 2026
+            },
+            "licenses": [
+                "Costa Rica"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": 100,
+                "freeSpinsUpTo": false,
+                "wager": 40,
+                "exclusive": {
+                    "text": "100 Free Spins + Book Of Dead",
+                    "promoCode": "FAMILIA125"
+                }
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/clickspinorhino.com\/t7w4dbqmu"
+            }
+        },
+        {
+            "id": "B",
+            "name": "FreeSpinz",
+            "description": "Καλώς ήρθατε στο FreeSpinz! Απολαύστε bonus 120% έως 500€ μαζί με 100 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2026\/02\/removebg-preview.png",
+                "background": "https:\/\/res.cloudinary.com\/casinogrounds\/image\/upload\/f_auto,q_auto,w_auto,c_scale\/v1648567569\/casinos\/spinz\/games-casino-spinz.jpg"
+            },
+            "company": {
+                "owner": "Pacific Odds S.R.L.",
+                "established": 2024
+            },
+            "licenses": [
+                "Comoros"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 120,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": 100,
+                "freeSpinsUpTo": true,
+                "wager": 35,
+                "exclusive": null
+            },
+            "withdrawals": {
+                "perMonth": {
+                    "amount": 100000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/go.aff.freespinz.com\/5cn8e315"
+            }
+        },
+        {
+            "id": "1",
+            "name": "SlotsGem",
+            "description": "Καλώς ήρθατε στο SlotsGem! Απολαύστε bonus 120% έως 600€ μαζί με 125 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2025\/09\/photo_2025-09-10_22-35-36-removebg-preview.png",
+                "background": "https:\/\/www.slots4play.com\/wp-content\/uploads\/2025\/02\/SlotsGem-bonus-codes.png"
+            },
+            "company": {
+                "owner": "LATCAS B.V.",
+                "established": 2025
+            },
+            "licenses": [
+                "Curaçao (ANT)",
+                "Comoros (AOFA)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 120,
+                "percentageUpTo": true,
+                "maxAmount": 600,
+                "maxAmountUpTo": true,
+                "freeSpins": 125,
+                "freeSpinsUpTo": true,
+                "wager": 40
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 4000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/top.aglobally.com\/redirect.aspx?pid=86067&lpid=601&bid=1487"
+            }
+        },
+        {
+            "id": "2",
+            "name": "SpinLine",
+            "description": "Καλώς ήρθατε στο SpinLine! Απολαύστε bonus 150% έως 350€ μαζί με 200 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/10\/spinline-casino.png",
+                "background": "https:\/\/static.casino.guru\/pict\/1235021\/spinline_casino_game_gallery_desktop.png?timestamp=1748517000000&imageDataId=1335903"
+            },
+            "company": {
+                "owner": "GBL Solutions N.V.",
+                "established": 2024
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 300,
+                "maxAmountUpTo": false,
+                "freeSpins": 200,
+                "freeSpinsUpTo": false,
+                "wager": 40
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 20000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/spln.plfexa.com\/?mid=334343_2042859"
+            }
+        },
+        {
+            "id": "3",
+            "name": "Roll Casino",
+            "description": "Καλώς ήρθατε στο Roll Casino! Απολαύστε bonus 100% έως 500€ μαζί με 50 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2025\/07\/photo_2025-07-11_18-51-50-removebg-preview.png",
+                "background": "https:\/\/www.nightrush.com\/en\/wp-content\/uploads\/sites\/2\/2025\/10\/ss-2-rollcasino.webp"
+            },
+            "company": {
+                "owner": "Madial N.V.",
+                "established": 2025
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": 50,
+                "freeSpinsUpTo": false,
+                "wager": 35
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/track.goldpartners.co\/visit\/?bta=35055&nci=5360"
+            }
+        },
+        {
+            "id": "4",
+            "name": "Leon",
+            "description": "Καλώς ήρθατε στο Leon! Απολαύστε bonus 100% έως 600€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/leon-casino.png",
+                "background": "https:\/\/cryptozooworld.com\/wp-content\/uploads\/leon_home_screenshot.webp"
+            },
+            "company": {
+                "owner": "Moonlite N.V.",
+                "established": 2008
+            },
+            "licenses": [
+                "Curaçao (ANT)",
+                "Kahnawake (KGC)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 600,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": 30
+            },
+            "withdrawals": [],
+            "links": {
+                "claimOffer": "https:\/\/k56thc2itt.com\/?serial=47713&creative_id=386&anid="
+            }
+        },
+        {
+            "id": "5",
+            "name": "Wolfy Casino",
+            "description": "Καλώς ήρθατε στο Wolfy Casino! Απολαύστε bonus 100% έως 200€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/Wolfy-casino-Logo-2048x610.png",
+                "background": "https:\/\/a1.worldcasinodirectory.com\/system\/modules\/casino\/images\/attachments\/000\/384\/212\/original\/Wolfy_Casino_01.12.2025._Hp.jpg?1764577715"
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2020
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 200,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/record.wolfyaffiliates.com\/_i-LA7HPc3bcVbxXQ5NRGNWNd7ZgqdRLk\/1\/?pg=1"
+            }
+        },
+        {
+            "id": "6",
+            "name": "True Luck",
+            "description": "Καλώς ήρθατε στο True Luck! Απολαύστε bonus 100% έως 500€ μαζί με 100 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2025\/04\/True-luck-logo-removebg-preview.png",
+                "background": "https:\/\/screenshot.slotcatalog.com\/userfiles\/image\/casino\/true-luck\/true-luck-GR-20260205.jpg"
+            },
+            "company": {
+                "owner": "Lyntec Limited",
+                "established": 2025
+            },
+            "licenses": [
+                "Costa Rica"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": 100,
+                "freeSpinsUpTo": false,
+                "wager": 40
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 30000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/clicktrueluck.com\/t8d4d491c"
+            }
+        },
+        {
+            "id": "7",
+            "name": "Twin",
+            "description": "Καλώς ήρθατε στο Twin! Απολαύστε bonus 100% έως 500€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/twin-casino.png",
+                "background": "https:\/\/5litra.ru\/wp-content\/uploads\/2024\/06\/1.jpg"
+            },
+            "company": {
+                "owner": "Moonlite N.V.",
+                "established": 2017
+            },
+            "licenses": [
+                "Curaçao (ANT)",
+                "Kahnawake (KGC)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": true,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": 30
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/k56thc2itt.com\/?serial=47714&creative_id=547&anid="
+            }
+        },
+        {
+            "id": "8",
+            "name": "Stupid Casino",
+            "description": "Καλώς ήρθατε στο Stupid Casino! Απολαύστε bonus 100% έως 300€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/StupidCasino_logo-2048x922.png",
+                "background": "https:\/\/static.casino.guru\/pict\/1221983\/stupid_casino_game_gallery_desktop.png?timestamp=1747321861000&imageDataId=1319559"
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2023
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 300,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/record.wolfyaffiliates.com\/_i-LA7HPc3bdfWQTENI37dGNd7ZgqdRLk\/1\/?pg=0"
+            }
+        },
+        {
+            "id": "9",
+            "name": "7 Play",
+            "description": "Καλώς ήρθατε στο 7 Play! Απολαύστε bonus 100% έως 1000€ μαζί με 150 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2025\/06\/images__1_-removebg-preview.png",
+                "background": "https:\/\/cdn.irishluck.ie\/filters:format(webp)\/fit-in\/675x352\/1761817157\/sevenplay-casino-game-collection.jpg"
+            },
+            "company": {
+                "owner": "Leva Ltd",
+                "established": 2025
+            },
+            "licenses": [
+                "Comoros (AOFA)"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 1000,
+                "maxAmountUpTo": false,
+                "freeSpins": 150,
+                "freeSpinsUpTo": false,
+                "wager": 30
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/zettlersrr.com\/api\/v3\/offer\/128?aff_sub2=GR_Stream_150_50&affiliate_id=68&url_id=503"
+            }
+        },
+        {
+            "id": "10",
+            "name": "Holly Luck",
+            "description": "Καλώς ήρθατε στο Holly Luck! Απολαύστε bonus 100% έως 500€ μαζί με 100 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2025\/11\/holy-removebg-preview.png",
+                "background": "https:\/\/cdn.static.express\/storage\/casino\/GRCR\/img\/casinos-screenshots\/oaRXPO1dq0bYHbjLmUoOFIsrvUuBjgHiOA4Oktuy.webp"
+            },
+            "company": {
+                "owner": "Zephyr Holding Sociedad De Responsabilidad Limitada",
+                "established": 2025
+            },
+            "licenses": [
+                "Costa Rica"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English",
+                    "Greek"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": 100,
+                "freeSpinsUpTo": false,
+                "wager": 40
+            },
+            "withdrawals": {
+                "perDay": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/clickholyluck.com\/t0857556e"
+            }
+        },
+        {
+            "id": "11",
+            "name": "Hit' N' Spin",
+            "description": "Καλώς ήρθατε στο Hit' N' Spin! Απολαύστε bonus 100% έως 300€ μαζί με 100 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/hitnspin-casino.png",
+                "background": "https:\/\/cdn.static.express\/storage\/casino\/GRCR\/img\/casinos-screenshots\/hitnspin-casino-1.webp"
+            },
+            "company": {
+                "owner": "TwiceDice B.V.",
+                "established": 2023
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": false,
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English",
+                    "Greek"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": true,
+                "maxAmount": 300,
+                "maxAmountUpTo": false,
+                "freeSpins": 100,
+                "freeSpinsUpTo": false,
+                "wager": 40
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/hitnspinpromo.com\/l\/6613bd9cd5d433c35d0f2354?sub_id=sub_id_1&click_id=click_id"
+            }
+        },
+        {
+            "id": "12",
+            "name": "CasinoStars",
+            "description": "Καλώς ήρθατε στο CasinoStars! Απολαύστε bonus 100% έως 300€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/casinostars-new.png",
+                "background": "https:\/\/nowagering.com\/storage\/app\/uploads\/public\/672\/4a5\/512\/6724a5512ba2e831433659.webp"
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2024
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 300,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/record.mematoaffiliates.com\/_5TbqxjqhHnGYnVqGHN08XWNd7ZgqdRLk\/1\/"
+            }
+        },
+        {
+            "id": "13",
+            "name": "Casino Orca",
+            "description": "Καλώς ήρθατε στο Casino Orca! Απολαύστε bonus 150% έως 150€",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/10\/casino-orca-new.png",
+                "background": "https:\/\/nowagering.com\/storage\/app\/uploads\/public\/672\/49d\/429\/67249d4295854842079235.webp"
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2024
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 500,
+                "maxAmountUpTo": false,
+                "freeSpins": null,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/www.casinoorca.com\/?myafftk=IT-D4toigqFdg40rJFe2OmNd7ZgqdRLk&myaffid=140"
+            }
+        },
+        {
+            "id": "14",
+            "name": "BetRoom24",
+            "description": "Καλώς ήρθατε στο BetRoom24! Απολαύστε bonus 100% έως 250€ μαζί με 25 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/BetRoom24.png",
+                "background": "https:\/\/static.casino.guru\/pict\/1355482\/betroom_24_casino_homepage_desktop.png?timestamp=1760894899000&imageDataId=1489900"
+            },
+            "company": {
+                "owner": "Mirage Corporation N.V.",
+                "established": 2020
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 250,
+                "maxAmountUpTo": false,
+                "freeSpins": 25,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/record.mematoaffiliates.com\/_5TbqxjqhHnFZSuvhn4yj1mNd7ZgqdRLk\/1\/"
+            }
+        },
+        {
+            "id": "15",
+            "name": "Thor Casino",
+            "description": "Καλώς ήρθατε στο Thor Casino! Απολαύστε bonus 100% έως 200€ μαζί με 25 Free Spins!",
+            "media": {
+                "logo": "https:\/\/7hegodfamilia.com\/wp-content\/uploads\/2024\/09\/thor-casino-new-2.png",
+                "background": "https:\/\/toroslots.com\/wp-content\/uploads\/Thor-Online-Casino.png"
+            },
+            "company": {
+                "owner": "Versus Odds B.V.",
+                "established": 2022
+            },
+            "licenses": [
+                "Curaçao (ANT)"
+            ],
+            "features": {
+                "vpnFriendly": true,
+                "languages": [
+                    "English"
+                ],
+                "liveChat": [
+                    "English"
+                ]
+            },
+            "bonus": {
+                "percentage": 100,
+                "percentageUpTo": false,
+                "maxAmount": 200,
+                "maxAmountUpTo": false,
+                "freeSpins": 25,
+                "freeSpinsUpTo": false,
+                "wager": null
+            },
+            "withdrawals": {
+                "perWeek": {
+                    "amount": 2500,
+                    "currency": "EUR"
+                },
+                "perMonth": {
+                    "amount": 10000,
+                    "currency": "EUR"
+                }
+            },
+            "links": {
+                "claimOffer": "https:\/\/record.mematoaffiliates.com\/_5TbqxjqhHnFVDQsR8vgoqWNd7ZgqdRLk\/1\/"
+            }
+        }
+    ]
+}

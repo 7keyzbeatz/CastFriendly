@@ -1,0 +1,67 @@
+﻿{
+    "meta": {
+        "version": "1.0",
+        "lastUpdated": "2026-02-10"
+    },
+    "brands": [
+        {
+            "id": "spinorhino-casino",
+            "rank": "1",
+            "name": "Spinorhino Casino",
+            "description": "Περιγραφή καζίνο...\nΝέα παράγραφος...",
+
+            "media": {
+                "logo": "/admin/uploads/logos/logo.png",
+                "background": "/admin/uploads/backgrounds/bg.webp"
+            },
+
+            "company": {
+                "owner": "JETRHOLOCO LIMITADA",
+                "established": 2021
+            },
+
+            "licenses": [
+                "Curaçao (ANT)",
+                "Comoros (AOFA)"
+            ],
+
+            "features": {
+                "vpnFriendly": true,
+                "languages": [ "English", "Greek" ],
+                "liveChat": [ "English" ]
+            },
+
+            "bonus": {
+                "percentage": 120,
+                "percentageUpTo": true,
+
+                "maxAmount": 600,
+                "maxAmountUpTo": true,
+
+                "freeSpins": 100,
+                "freeSpinsUpTo": true,
+
+                "wager": 40,
+
+                "code": "WELCOME120",
+                "codeDescription": "Με το promo code παίρνεις 120% bonus έως 600€ + 100 free spins."
+            },
+
+            "withdrawals": {
+                "perDay": {
+                    "amount": 5000,
+                    "currency": "EUR"
+                },
+                "perWeek": null,
+                "perMonth": {
+                    "amount": 50000,
+                    "currency": "EUR"
+                }
+            },
+
+            "links": {
+                "claimOffer": "https://affiliate.example.com/ref=7hegodfamilia"
+            }
+        }
+    ]
+}

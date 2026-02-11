@@ -1,0 +1,362 @@
+﻿{
+    "giveaways": [
+        {
+            "id": "eighth-big-giveaway",
+            "title": "Eighth BIG Giveaway",
+            "status": "active",
+            "endsAt": "2026-02-28",
+            "heroImage": "https://www.pixartprinting.co.uk/blog/wp-content/uploads/2022/09/giveaway.jpg",
+
+            "prizes": [
+                {
+                    "position": 1,
+                    "amount": 400,
+                    "currency": "EUR"
+                },
+                {
+                    "position": 2,
+                    "amount": 300,
+                    "currency": "EUR"
+                },
+                {
+                    "position": 3,
+                    "amount": 150,
+                    "currency": "EUR"
+                },
+                {
+                    "position": 4,
+                    "amount": 150,
+                    "currency": "EUR"
+                }
+            ],
+
+            "rules": [
+                "Η εγγραφή στο καζίνο πρέπει να έχει γίνει από δικό μας link",
+                "Η κατάθεση πρέπει να γίνεται ολόκληρη σε μία συναλλαγή",
+                "Δεν υπάρχει περιορισμός συμμετοχών ανά άτομο",
+                "Η φωτογραφία της κατάθεσης πρέπει να είναι μέσα από το ιστορικό λογαριασμού",
+                "Οι νικητές θα ελεγχθούν αν έχουν εγγραφεί από δικό μας link",
+                "Δεκτές καταθέσεις από 28/11/2025 έως 31/01/2026"
+            ],
+
+            "entriesTable": [
+                {
+                    "deposit": 30,
+                    "entries": 1
+                },
+                {
+                    "deposit": 50,
+                    "entries": 2
+                },
+                {
+                    "deposit": 70,
+                    "entries": 3
+                },
+                {
+                    "deposit": 100,
+                    "entries": 5
+                },
+
+                {
+                    "deposit": 130,
+                    "entries": 7
+                },
+                {
+                    "deposit": 180,
+                    "entries": 10
+                },
+                {
+                    "deposit": 210,
+                    "entries": 12
+                },
+                {
+                    "deposit": 250,
+                    "entries": 15
+                },
+                {
+                    "deposit": 300,
+                    "entries": 20
+                },
+
+                {
+                    "deposit": 350,
+                    "entries": 25
+                },
+                {
+                    "deposit": 400,
+                    "entries": 30
+                },
+                {
+                    "deposit": 450,
+                    "entries": 40
+                },
+                {
+                    "deposit": 500,
+                    "entries": 50
+                }
+            ],
+
+            "submission": {
+                "enabled": true,
+                "fields": [
+                    {
+                        "name": "username_email",
+                        "label": "Username & Email",
+                        "type": "text",
+                        "required": true
+                    },
+                    {
+                        "name": "casino",
+                        "label": "Casino",
+                        "type": "select",
+                        "required": true
+                    },
+                    {
+                        "name": "deposit_screenshot",
+                        "label": "Deposit Screenshot",
+                        "type": "file",
+                        "accept": [ "image/png", "image/jpeg" ],
+                        "required": true
+                    }
+                ],
+                "submitLabel": "SEND"
+            }
+        },
+
+        {
+            "id": "seventh-big-giveaway",
+            "title": "Seventh BIG Giveaway",
+            "status": "ended",
+
+            "description": "Η Φαμίλια και το Rollcasino ένωσαν τις δυνάμεις τους για έναν εκρηκτικό διαγωνισμό.",
+
+            "winners": [
+                {
+                    "position": 1,
+                    "amount": 700,
+                    "winner": "Giwrgos_Vergis"
+                },
+                {
+                    "position": 2,
+                    "amount": 500,
+                    "winner": "Sofi"
+                },
+                {
+                    "position": 3,
+                    "amount": 300,
+                    "winner": "Bessy"
+                },
+                {
+                    "position": 4,
+                    "amount": 200,
+                    "winner": "Di_mak"
+                },
+                {
+                    "position": 5,
+                    "amount": 150,
+                    "winner": "XzeroZerg"
+                },
+                {
+                    "position": 6,
+                    "amount": 150,
+                    "winner": "Wallstreetmafia"
+                }
+            ]
+        },
+
+        {
+            "id": "sixth-big-giveaway",
+            "title": "Sixth BIG Giveaway",
+            "status": "ended",
+
+            "description": "Μετρητά μέσω crypto ή αγορές από οποιοδήποτε eshop.",
+
+            "winners": [
+                {
+                    "position": 1,
+                    "amount": 500,
+                    "winner": "Angzelina"
+                },
+                {
+                    "position": 2,
+                    "amount": 150,
+                    "winner": "Αλεξάνδρα Κ"
+                },
+                {
+                    "position": 3,
+                    "amount": 150,
+                    "winner": "Di_mak"
+                },
+                {
+                    "position": 4,
+                    "amount": 100,
+                    "winner": "Kyprianos"
+                },
+                {
+                    "position": 5,
+                    "amount": 100,
+                    "winner": "7he_Baptismal"
+                }
+            ]
+        },
+
+        {
+            "id": "fifth-big-giveaway",
+            "title": "Fifth BIG Giveaway",
+            "status": "ended",
+
+            "winners": [
+                {
+                    "position": 1,
+                    "amount": 800,
+                    "winner": "Bessy"
+                },
+                {
+                    "position": 2,
+                    "amount": 400,
+                    "winner": "Jordi_el_nino"
+                },
+                {
+                    "position": 3,
+                    "amount": 300,
+                    "winner": "WallStreetMafia"
+                },
+                {
+                    "position": 4,
+                    "amount": 50,
+                    "winner": "Angzelina"
+                },
+
+                {
+                    "position": "extra",
+                    "amount": 300,
+                    "winner": "Prismeno_Ripapa"
+                },
+                {
+                    "position": "extra",
+                    "amount": 200,
+                    "winner": "Brwmoxeros"
+                },
+                {
+                    "position": "extra",
+                    "amount": 150,
+                    "winner": "Sweetghost"
+                },
+                {
+                    "position": "extra",
+                    "amount": 150,
+                    "winner": "Di_Mak"
+                }
+            ]
+        },
+
+        {
+            "id": "fourth-big-giveaway",
+            "title": "Fourth BIG Giveaway",
+            "status": "ended",
+
+            "winners": [
+                {
+                    "prize": "Tesla TV 50” Android",
+                    "winner": "ΜΠΑΜΠΗΣ ΚΚ"
+                },
+                {
+                    "prize": "Gaming Chair Anda Seat",
+                    "winner": "STATHIS SALONIKA"
+                },
+                {
+                    "prize": "Tablet Samsung",
+                    "winner": "ΜΠΑΜΠΗΣ ΚΚ"
+                },
+                {
+                    "prize": "Smartwatch Samsung",
+                    "winner": "TYREMPORASSOBER"
+                },
+                {
+                    "prize": "100€ Paysafe",
+                    "winner": "TASOULA92"
+                },
+                {
+                    "prize": "Perfumes (Man & Woman)",
+                    "winner": "SOFI"
+                },
+                {
+                    "prize": "#WhatYouNeed Gift 50€",
+                    "winner": "MPRAKALAKAS"
+                },
+                {
+                    "prize": "Hoodie",
+                    "winner": "FOTIS MPOUZ"
+                },
+                {
+                    "prize": "T-Shirt",
+                    "winner": "FOTIS MPOUZ"
+                },
+                {
+                    "prize": "Mug",
+                    "winner": "PAVLOS"
+                }
+            ]
+        },
+
+        {
+            "id": "third-big-giveaway",
+            "title": "Third BIG Giveaway",
+            "status": "ended",
+
+            "winners": [
+                {
+                    "position": 1,
+                    "amount": 500,
+                    "winner": "Farinakos"
+                }
+            ]
+        },
+
+        {
+            "id": "second-big-giveaway",
+            "title": "Second BIG Giveaway",
+            "status": "ended",
+
+            "winners": [
+                {
+                    "prize": "Gaming Laptop MSI Thin GF63",
+                    "winner": "Sofi"
+                },
+                {
+                    "prize": "250€ Gift Card",
+                    "winner": "Lintech"
+                },
+                {
+                    "prize": "100€ Paysafe",
+                    "winner": "Nick_Mainas"
+                },
+                {
+                    "prize": "75€ Paysafe",
+                    "winner": "Sofakimpoumpou"
+                },
+                {
+                    "prize": "50€ Paysafe",
+                    "winner": "KyprianosHonda"
+                },
+                {
+                    "prize": "50€ Paysafe",
+                    "winner": "Angzelina"
+                }
+            ]
+        },
+
+        {
+            "id": "first-big-giveaway",
+            "title": "First BIG Giveaway",
+            "status": "ended",
+
+            "winners": [
+                {
+                    "prize": "Playstation 5",
+                    "winner": "UnclePepegkas"
+                }
+            ]
+        }
+    ]
+}

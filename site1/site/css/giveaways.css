@@ -1,0 +1,220 @@
+﻿/* ===== GLOBAL BACKGROUND (ΜΟΝΟ ΕΔΩ ΚΙΝΗΣΗ) ===== */
+body {
+    background: radial-gradient(circle at top, #0b1224, #020617 60%);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -20%;
+        background-image: url("https://7hegodfamilia.com/wp-content/uploads/2025/09/logo-home-page-1024x912.png");
+        background-size: cover;
+        background-position: center;
+        filter: blur(42px);
+        opacity: 0.14;
+        transform: var(--bg-move, translate3d(0,0,0) scale(1.15));
+        transition: transform 0.15s linear;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+/* ===== PAGE ===== */
+.giveaways-page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+/* ===== HERO ===== */
+.giveaways-hero {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+    .giveaways-hero h1 {
+        font-size: 48px;
+        font-weight: 900;
+        background: linear-gradient(135deg,#f5a524,#ffcc70);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .giveaways-hero p {
+        color: #9ca3af;
+    }
+
+/* ===== ACTIVE GIVEAWAY ===== */
+.active-giveaway {
+    display: none;
+    border-radius: 36px;
+    padding: 60px;
+    margin-bottom: 120px;
+    background: rgba(15,23,42,.6);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 40px 120px rgba(0,0,0,.8);
+}
+
+.active-giveaway-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+/* HEADER */
+.badge-live {
+    background: #dc2626;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.countdown {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #f5a524;
+    font-weight: 700;
+}
+
+/* PRIZES */
+.prizes {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin: 40px 0;
+}
+
+.prize-box {
+    min-width: 120px;
+    padding: 20px;
+    border-radius: 18px;
+    background: radial-gradient(circle at top,#f5a52455,#000 70%);
+    font-weight: 900;
+}
+
+    .prize-box span {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        color: #f5a524;
+    }
+
+/* ENTRIES – ΚΕΝΤΡΟ / ΣΥΜΜΕΤΡΙΑ */
+.entries-table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    max-width: 720px;
+    margin: 0 auto 40px;
+}
+
+.entry-box {
+    background: linear-gradient(135deg,#020617,#0b1224);
+    padding: 10px 6px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+    .entry-box strong {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+/* CTA */
+.cta-btn {
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: linear-gradient(135deg,#f5a524,#ffcc70);
+    color: #000;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* HOW */
+.how-to-enter {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step {
+    width: 240px;
+    padding: 26px;
+    border-radius: 20px;
+    background: linear-gradient(180deg,#020617,#0f172a);
+}
+
+    .step span {
+        display: block;
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg,#f5a524,#ffcc70);
+        color: #000;
+        line-height: 36px;
+        font-weight: 900;
+    }
+
+/* RULES */
+.rules-section {
+    max-width: 900px;
+    margin: 0 auto 120px;
+}
+
+/* ENDED */
+#endedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 40px;
+}
+
+.giveaway-card {
+    height: 200px;
+    border-radius: 26px;
+    background: linear-gradient(180deg,#0f172a,#020617);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.view-details-btn {
+    align-self: flex-start;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg,#f5a524,#ffcc70);
+    color: #000;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.community-message {
+    max-width: 720px;
+    margin: 0 auto 80px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.giveaways-hero .community-message {
+    margin: 24px auto;
+    max-width: 720px;
+    color: #9ca3af;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.giveaways-hero .subtitle {
+    color: #9ca3af;
+}

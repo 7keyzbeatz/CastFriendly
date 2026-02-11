@@ -1,0 +1,378 @@
+﻿/* ===============================
+   BRAND DETAILS – PRO CASINO UI
+   =============================== */
+
+:root {
+    --gold: #f5a524;
+    --gold-soft: rgba(245,165,36,.25);
+    --bg-dark: #020617;
+    --bg-card: rgba(15,23,42,.7);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --radius-lg: 30px;
+    --radius-md: 20px;
+    --ease-out: cubic-bezier(.175,.885,.32,1.275);
+}
+
+/* ================= HERO BACKGROUND ================= */
+
+.brand-hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover; /* 👈 cover αντί για contain για να γεμίζει την οθόνη */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Πίσω από όλα */
+    opacity: 0.45;
+    filter: blur(8px); /* Λίγο παραπάνω blur βοηθάει στο να μη "χτυπάει" στο μάτι */
+    pointer-events: none;
+}
+
+@keyframes bgFloat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ================= CONTAINER ================= */
+
+.detail-container {
+    max-width: 1000px;
+    margin: 120px auto 60px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background: #00000000;
+    animation: pageIn .8s ease forwards;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ================= HEADER ================= */
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(245,165,36,.14), rgba(15,23,42,.7));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 25px 60px rgba(0,0,0,.55);
+    margin-bottom: 40px;
+}
+
+.detail-logo {
+    width: 140px;
+    height: 140px;
+    background: #0d1420;
+    border-radius: 24px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .detail-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+/* ================= REVIEW CONTENT ================= */
+
+.review-content {
+    background: rgba(11,14,19,.85);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,.06);
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+    .review-content h2 {
+        color: var(--gold);
+        font-size: 24px;
+        margin: 40px 0 20px;
+    }
+
+/* ================= EXCLUSIVE BONUS ================= */
+
+.exclusive-box {
+    background: linear-gradient(135deg, rgba(245,165,36,.25), rgba(0,0,0,0));
+    border: 2px solid var(--gold);
+    border-radius: 26px;
+    padding: 26px;
+    margin: 20px 0 36px;
+    box-shadow: 0 0 35px rgba(245,165,36,.25);
+}
+
+.exclusive-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.exclusive-text {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.exclusive-code {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+    .exclusive-code strong {
+        background: rgba(245,165,36,.25);
+        padding: 6px 14px;
+        border-radius: 10px;
+        letter-spacing: .1em;
+        color: #fff;
+    }
+
+/* ================= MAIN BONUS (WELCOME) ================= */
+
+.bonus-pro {
+    background: linear-gradient(180deg,#0f172a,#020617);
+    border-radius: 30px;
+    padding: 36px;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+    margin: 36px 0 46px;
+}
+
+.bonus-title {
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 24px;
+}
+
+.bonus-values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+    .bonus-values > div {
+        text-align: center;
+        transition: transform .35s var(--ease-out);
+    }
+
+        .bonus-values > div:hover {
+            transform: translateY(-6px) scale(1.05);
+        }
+
+.bonus-plus {
+    font-size: 30px;
+    font-weight: 900;
+    color: rgba(255,255,255,.25);
+}
+
+.bonus-values .big {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.bonus-values .label {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.bonus-values .up-to {
+    font-size: 12px;
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+/* ================= BONUS CONDITIONS ================= */
+
+.bonus-conditions {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+    .bonus-conditions strong {
+        color: var(--gold);
+    }
+
+/* ================= WITHDRAWALS ================= */
+
+.withdrawals-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: rgba(31,41,55,.65);
+    padding: 22px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.06);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+    .info-card:hover {
+        transform: translateY(-6px) scale(1.04);
+        box-shadow: 0 16px 35px rgba(0,0,0,.5);
+    }
+
+    .info-card span {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+    }
+
+    .info-card strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 20px;
+        color: #fff;
+    }
+
+/* ================= CTA ================= */
+
+.cta-box {
+    margin-top: 60px;
+    padding: 50px;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid var(--gold);
+    background: linear-gradient(135deg, rgba(245,165,36,.18), transparent);
+    box-shadow: 0 0 40px rgba(245,165,36,.25);
+}
+
+.big-btn {
+    display: inline-block;
+    padding: 22px 90px;
+    background: linear-gradient(135deg,#f5a524,#ff8c00);
+    color: #000;
+    font-weight: 900;
+    font-size: 22px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s var(--ease-out);
+}
+
+    .big-btn::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+        transform: translateX(-120%);
+    }
+
+    .big-btn:hover {
+        transform: scale(1.08) translateY(-5px);
+    }
+
+        .big-btn:hover::after {
+            transform: translateX(120%);
+            transition: transform .7s ease;
+        }
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gold);
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    transition: all .35s ease;
+}
+
+    .back-btn::before {
+        content: "←";
+        font-size: 18px;
+    }
+
+    .back-btn:hover {
+        background: var(--gold);
+        color: #000;
+        box-shadow: 0 0 20px rgba(245,165,36,.45);
+    }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .withdrawals-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .withdrawals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bonus-values {
+        gap: 20px;
+    }
+}
+
+.detail-container {
+    overflow-x: hidden;
+}

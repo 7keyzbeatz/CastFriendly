@@ -1,0 +1,90 @@
+﻿/* ================= RULES WRAPPER ================= */
+
+.rules-wrapper {
+    padding: 40px;
+}
+
+.rules-container {
+    max-width: 1200px; /* 👈 ΙΔΙΟ FEEL ΜΕ BRANDS */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ================= HERO ================= */
+
+.rules-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #1f2937;
+    border-radius: 22px;
+}
+
+    .rules-hero h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 900;
+        color: #f5a524;
+        letter-spacing: 1px;
+    }
+
+    .rules-hero p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #9ca3af;
+    }
+
+/* ================= RULE CARD ================= */
+
+.rules-card {
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #1f2937;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.6);
+}
+
+    .rules-card h2 {
+        margin: 0 0 14px;
+        font-size: 18px;
+        font-weight: 900;
+        color: #93c5fd;
+    }
+
+    .rules-card ul {
+        padding-left: 18px;
+        margin: 0;
+    }
+
+    .rules-card li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #d1d5db;
+        line-height: 1.6;
+    }
+
+/* ================= EXAMPLE BOX ================= */
+
+.rules-example {
+    margin-top: 16px;
+    padding: 16px;
+    background: #020617;
+    border: 1px solid rgba(148,163,184,.18);
+    border-radius: 14px;
+    font-size: 13px;
+    color: #e5e7eb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .rules-wrapper {
+        padding: 20px;
+    }
+
+    .rules-hero h1 {
+        font-size: 22px;
+    }
+}
