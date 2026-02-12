@@ -56,7 +56,7 @@ const symbolImages = [
 ];
 
 const winSoundsList = ['sounds/eee ante geia.mp3', 'sounds/espase.mp3', 'sounds/taaack.mp3'];
-const lossSoundsList = ['sounds/vision.mp3', 'sounds/lose_alternative.mp3'];
+const lossSoundsList = ['sounds/visisson.mp3', 'sounds/lose_alternative.mp3'];
 const spinSoundsList = ['sounds/kick.wav'];
 
 // --- ELEMENTS ---
