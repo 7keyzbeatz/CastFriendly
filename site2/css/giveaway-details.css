@@ -1,0 +1,383 @@
+﻿/* ===== BACKGROUND ===== */
+body {
+    background: radial-gradient(circle at top, #0b1224, #020617 60%);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -20%;
+        background-image: url("https://tanea.com.au/wp-content/uploads/2025/12/Greek-rapper-Negros-Tou-Moria-cracks-Guardians-top-two-Global-Albums.jpg");
+        background-size: cover;
+        background-position: center;
+        filter: blur(42px);
+        opacity: 0.12;
+        transform: var(--bg-move, translate3d(0,0,0) scale(1.15));
+        transition: transform .2s linear;
+        z-index: -1;
+    }
+
+/* ===== PAGE ===== */
+.details-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 30px;
+    text-align: center;
+}
+
+/* ===== TITLE ===== */
+#title {
+    font-size: 48px;
+    margin-bottom: 80px;
+    font-weight: 900;
+    background: linear-gradient(135deg,#f5a524,#ffcc70);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== TOP WINNERS ===== */
+.top-winners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 90px;
+}
+
+.winner-card {
+    height: 180px;
+    padding: 26px 24px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 900;
+    animation: rise .6s ease forwards;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.winner-rank {
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
+.winner-name {
+    font-size: 20px;
+}
+
+.winner-amount {
+    font-size: 15px;
+    opacity: .9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* ===== COLORS ===== */
+.gold {
+    background: radial-gradient(circle at top,#ffd27a,#b8860b);
+    color: #000;
+}
+
+.silver {
+    background: radial-gradient(circle at top,#e5e7eb,#9ca3af);
+    color: #000;
+}
+
+.bronze {
+    background: radial-gradient(circle at top,#f0b37e,#92400e);
+    color: #000;
+}
+
+/* ===== OTHER WINNERS ===== */
+.others-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.other-winners {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 22px;
+}
+
+.other-winner {
+    padding: 14px 22px;
+    border-radius: 16px;
+    background: linear-gradient(135deg,#020617,#0b1224);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    min-height: 56px;
+    transition: all .25s ease;
+}
+
+.ow-name {
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ow-amount {
+    color: #f5a524;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.other-winner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 50px rgba(245,165,36,.25);
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f5a524;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    transition: all .35s ease;
+}
+
+    .back-btn::before {
+        content: "←";
+        font-size: 18px;
+    }
+
+    .back-btn:hover {
+        background: #f5a524;
+        color: #000;
+        box-shadow: 0 0 20px rgba(245,165,36,.45);
+    }
+
+/* ========================================================= */
+/* ====================== RESPONSIVE ======================= */
+/* ========================================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .top-winners {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    #title {
+        font-size: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+
+    .details-page {
+        padding: 90px 16px;
+    }
+
+    #title {
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+
+    .top-winners {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 70px;
+    }
+
+    .winner-card {
+        height: auto;
+        padding: 22px;
+    }
+
+    .winner-name {
+        font-size: 18px;
+    }
+
+    .winner-amount {
+        font-size: 14px;
+    }
+
+    .others-title {
+        font-size: 22px;
+    }
+
+    .other-winner {
+        padding: 12px 16px;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .ow-name {
+        max-width: 70%;
+    }
+
+    .ow-amount {
+        font-size: 13px;
+    }
+
+    .back-btn {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+        .back-btn::before {
+            font-size: 16px;
+        }
+
+    body::before {
+        filter: blur(28px);
+        opacity: 0.08;
+    }
+}
+
+#title {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: titleReveal 1.2s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+@keyframes titleReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#title::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg,#f5a524,#ffcc70);
+    animation: underlineExpand 1.4s ease forwards .5s;
+}
+
+@keyframes underlineExpand {
+    to {
+        width: 160px;
+    }
+}
+
+.winner-card {
+    opacity: 0;
+    transform: translateY(50px) scale(.95);
+    animation: winnerEnter .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+    .winner-card:nth-child(1) {
+        animation-delay: .3s;
+    }
+
+    .winner-card:nth-child(2) {
+        animation-delay: .5s;
+    }
+
+    .winner-card:nth-child(3) {
+        animation-delay: .7s;
+    }
+
+@keyframes winnerEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.gold {
+    position: relative;
+    overflow: hidden;
+}
+
+    .gold::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(255,255,255,.3), transparent 70%);
+        opacity: 0;
+        animation: goldPulse 3s infinite;
+    }
+
+@keyframes goldPulse {
+    0%,100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .35;
+    }
+}
+
+.winner-card {
+    transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease;
+}
+
+    .winner-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 40px 100px rgba(0,0,0,.7);
+    }
+
+.other-winner {
+    position: relative;
+    overflow: hidden;
+}
+
+    .other-winner::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0%;
+        background: linear-gradient(90deg,#f5a524,#ffcc70);
+        transition: .4s ease;
+    }
+
+    .other-winner:hover::before {
+        width: 100%;
+    }
+
+    .other-winner:hover {
+        transform: translateY(-4px);
+    }
+
+.back-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+    .back-btn::before {
+        content: "←";
+        display: inline-block;
+        transition: transform .3s ease;
+    }
+
+    .back-btn:hover::before {
+        transform: translateX(-6px);
+    }

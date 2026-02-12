@@ -1,0 +1,132 @@
+﻿/* ===== GLOBAL BACKGROUND ===== */
+
+body {
+    background: radial-gradient(circle at top, #0b1224, #020617 60%);
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: -20%;
+        background-image: url("https://7hegodfamilia.com/wp-content/uploads/2025/09/logo-home-page-1024x912.png");
+        background-size: cover;
+        background-position: center;
+        filter: blur(42px);
+        opacity: 0.14;
+        transform: translate3d(0,0,0) scale(1.15);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+/* ===== WRAPPER ===== */
+
+.highlights-wrapper {
+    padding: 60px 20px;
+}
+
+.highlights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* ===== HERO ===== */
+
+.highlights-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #1f2937;
+    border-radius: 22px;
+}
+
+    .highlights-hero h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 900;
+        color: #f5a524;
+    }
+
+    .highlights-hero p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #9ca3af;
+    }
+
+/* ===== FEATURED ===== */
+
+.featured-video iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0,0,0,.7);
+}
+
+/* ===== SECTION ===== */
+
+.highlight-section h2 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #93c5fd;
+    margin-bottom: 20px;
+}
+
+/* ===== GRID ===== */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 28px;
+}
+
+.video-card {
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border: 1px solid #1f2937;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all .35s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,.6);
+}
+
+    .video-card iframe {
+        width: 100%;
+        height: 220px;
+        border-radius: 14px;
+        border: none;
+    }
+
+    /* Hover effect */
+
+    .video-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(245,165,36,.25);
+    }
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .featured-video iframe {
+        height: 260px;
+    }
+
+    .video-card iframe {
+        height: 200px;
+    }
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #fff;
+}
+
+    .logo span {
+        color: #f5a524;
+    }

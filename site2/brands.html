@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Casino Brands | 7heGodFamilia</title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/brands.css">
+</head>
+<body>
+
+    <header class="topbar">
+      <a href="home.html" class="logo">
+            7he<span>God</span>Familia
+        </a>
+
+      <!-- HAMBURGER (mobile only) -->
+      <div class="menu-toggle" id="menuToggle">☰</div>
+
+      <!-- NAV -->
+        <nav id="mainNav">
+            <a href="home.html">Home</a>
+            <a href="brands.html" class="active">Brands</a>
+            <a href="giveaways.html">Giveaways</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="rules.html">Rules</a>
+        </nav>
+    </header>
+
+    <section class="filters">
+        <input type="text" id="searchInput" placeholder="Αναζήτηση Casino…">
+
+        <select id="vpnFilter">
+            <option value="all">VPN Support (Όλα)</option>
+            <option value="true">Υποστηρίζει VPN</option>
+            <option value="false">Δεν υποστηρίζει VPN</option>
+        </select>
+
+        <select id="languageFilter">
+            <option value="all">Όλες οι Γλώσσες</option>
+            <option value="English">English Only</option>
+            <option value="both">Greek & English</option>
+        </select>
+
+        <select id="sortOrder">
+            <option value="default">Default</option>
+            <option value="alpha-asc">Όνομα (A-Z)</option>
+            <option value="alpha-desc">Όνομα (Z-A)</option>
+            <option value="date-desc">Νεότερο → Παλαιότερο</option>
+            <option value="date-asc">Παλαιότερο → Νεότερο</option>
+            <option value="bonus-desc">Max Bonus (Υψηλό)</option>
+            <option value="bonus-asc">Max Bonus (Χαμηλό)</option>
+            <option value="spins-desc">Free Spins (Πολλά)</option>
+            <option value="spins-asc">Free Spins (Λίγα)</option>
+            <option value="wager-asc">Wager (Χαμηλό)</option>
+            <option value="wager-desc">Wager (Υψηλό)</option>
+        </select>
+
+        <button id="resetFilters" class="btn-reset">Reset</button>
+    </section>
+
+    <div class="results-bar">
+        <span id="resultsCount"></span>
+    </div>
+
+    <div id="noResults" class="no-results hidden">Δεν βρέθηκαν αποτελέσματα.</div>
+
+    <section id="brandsGrid" class="brands-grid"></section>
+
+    <script src="js/brands.js"></script>
+
+    <script src="js/home.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<script>
+const params = new URLSearchParams(window.location.search);
+const giveawayId = params.get("id");
+
+fetch("data/giveaways.json")
+.then(r => r.json())
+.then(data => {
+
+    const giveaway = data.giveaways.find(g => g.id === giveawayId);
+
+    if (!giveaway || !giveaway.submission.enabled) {
+        document.body.innerHTML = "<h1>No active submission</h1>";
+        return;
+    }
+
+    buildForm(giveaway);
+});
+
+function buildForm(g) {
+
+    document.getElementById("giveawayTitle").textContent = g.title;
+
+    const form = document.getElementById("dynamicForm");
+
+    // hidden fields
+    form.innerHTML += `
+        <input type="hidden" name="giveaway_id" value="${g.id}">
+        <input type="hidden" name="giveaway_title" value="${g.title}">
+    `;
+
+    g.submission.fields.forEach(field => {
+
+        if (field.type === "text") {
+            form.innerHTML += `
+                <label>${field.label}</label>
+                <input type="text" name="${field.name}" required>
+            `;
+        }
+
+        if (field.type === "select") {
+            form.innerHTML += `
+                <label>${field.label}</label>
+                <select name="casino" required>
+                    <option value="">Select Casino</option>
+                    ${g.submission.casinos.map(c =>
+                        `<option value="${c.id}">${c.name}</option>`
+                    ).join("")}
+                </select>
+            `;
+        }
+
+        if (field.type === "file") {
+            form.innerHTML += `
+                <label>${field.label}</label>
+                <input type="file" name="deposit_screenshot"
+                accept="${field.accept.join(",")}" required>
+            `;
+        }
+    });
+
+    form.innerHTML += `
+        <button type="submit">${g.submission.submitLabel}</button>
+    `;
+}
+</script>

@@ -1,0 +1,596 @@
+﻿/* ===============================
+   Reset / Base
+   =============================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #020617, #000);
+    font-family: Inter, system-ui, sans-serif;
+    color: #e5e7eb;
+}
+
+.page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* ===============================
+   Header
+   =============================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .header h1 {
+        margin: 0;
+    }
+
+/* ===============================
+   Buttons
+   =============================== */
+
+.btn-primary {
+    background: linear-gradient(135deg,#f5a524,#ffcc70);
+    color: #000;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.edit-btn,
+.delete-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: #fff;
+}
+
+/* ===============================
+   Brands Grid
+   =============================== */
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ===============================
+   Brand Card (LOCKED)
+   =============================== */
+
+.brand-card {
+    background: linear-gradient(180deg,#0f172a,#020617);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    height: 240px; /* 🔒 ΣΤΑΘΕΡΟ */
+    overflow: hidden;
+    position: relative;
+}
+
+    /* ===============================
+   Brand Card Logo Normalization
+   =============================== */
+
+    .brand-card img {
+        width: 100%;
+        height: 60px; /* 🔒 ΣΤΑΘΕΡΟ SLOT */
+        max-width: 140px;
+        object-fit: contain;
+        margin: 0 auto 12px;
+        display: block;
+        flex-shrink: 0;
+    }
+
+/* name */
+
+.brand-name {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    min-height: 22px; /* 🔒 ΣΤΑΘΕΡΟ Y */
+    margin-bottom: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* rank badge */
+
+.rank {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #f5a524;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+/* ===============================
+   FOOTER (ACTIONS + DRAG)
+   =============================== */
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+/* drag handle */
+
+.drag-handle {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    font-size: 18px;
+    opacity: .6;
+    user-select: none;
+    background: rgba(255,255,255,.05);
+}
+
+    .drag-handle:hover {
+        opacity: 1;
+        background: rgba(245,165,36,.15);
+    }
+
+    .drag-handle:active {
+        cursor: grabbing;
+    }
+
+/* ===============================
+   Drag States
+   =============================== */
+
+.brand-card.dragging {
+    opacity: .5;
+}
+
+.drag-placeholder {
+    height: 240px;
+    border: 2px dashed #f5a524;
+    border-radius: 24px;
+    background: rgba(245,165,36,.08);
+}
+
+/* ===============================
+   BRAND FORM PAGE (SCOPED)
+   =============================== */
+
+.brand-form-page {
+    max-width: 1100px;
+}
+
+    /* reset grid/card effects inside form */
+    .brand-form-page .brands-grid,
+    .brand-form-page .brand-card,
+    .brand-form-page .card-footer,
+    .brand-form-page .drag-handle {
+        all: unset;
+    }
+
+    /* ===============================
+   FORM LAYOUT
+   =============================== */
+
+    .brand-form-page .form-card {
+        background: linear-gradient(180deg,#0f172a,#020617);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+
+    /* section titles */
+    .brand-form-page h2 {
+        margin: 0 0 20px;
+        font-size: 18px;
+        font-weight: 900;
+        color: #f5a524;
+    }
+
+    /* grid */
+    .brand-form-page .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 20px;
+    }
+
+    .brand-form-page .field-full {
+        grid-column: 1 / -1;
+    }
+
+    /* fields */
+    .brand-form-page .field label {
+        display: block;
+        font-size: 12px;
+        color: #9ca3af;
+        margin-bottom: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .brand-form-page input,
+    .brand-form-page textarea,
+    .brand-form-page select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: #020617;
+        border: 1px solid #1f2937;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .brand-form-page textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+        .brand-form-page input:focus,
+        .brand-form-page textarea:focus,
+        .brand-form-page select:focus {
+            outline: none;
+            border-color: #f5a524;
+            box-shadow: 0 0 0 1px rgba(245,165,36,.4);
+        }
+
+    /* ===============================
+   HEADER ACTIONS (SAVE / BACK)
+   =============================== */
+
+    .brand-form-page .header {
+        align-items: flex-start;
+    }
+
+    .brand-form-page .header-actions {
+        display: flex;
+        gap: 16px;
+    }
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 900px) {
+    .brand-form-page .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   Cancel Button (Secondary)
+   =============================== */
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    color: #e5e7eb;
+    background: transparent;
+    border: 1px solid #1f2937;
+    transition: all .2s ease;
+}
+
+    .btn-cancel:hover {
+        background: rgba(255,255,255,.06);
+        border-color: #374151;
+    }
+
+    .btn-cancel:active {
+        transform: translateY(1px);
+    }
+
+    .btn-cancel:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(245,165,36,.35);
+    }
+
+/* ===============================
+   Notices / Alerts
+   =============================== */
+
+.notice {
+    border-radius: 18px;
+    padding: 18px 22px;
+    margin: 20px 0 30px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.notice-info {
+    background: linear-gradient(180deg, #0b1220, #020617);
+    border: 1px solid #1f2937;
+    color: #93c5fd;
+}
+
+.notice strong {
+    font-size: 15px;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   BONUS – UP TO TOGGLE (PREMIUM)
+   =============================== */
+
+.brand-form-page .bonus-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 22px;
+}
+
+    .brand-form-page .bonus-row .upto {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        user-select: none;
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.08);
+        color: #6b7280;
+        transition: all .2s ease;
+    }
+
+        /* hide native checkbox */
+        .brand-form-page .bonus-row .upto input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* hover */
+        .brand-form-page .bonus-row .upto:hover {
+            border-color: rgba(245,165,36,.6);
+            color: #f5a524;
+        }
+
+        /* checked state */
+        .brand-form-page .bonus-row .upto:has(input:checked) {
+            background: linear-gradient(135deg,#f5a524,#ffcc70);
+            border-color: transparent;
+            color: #000;
+            box-shadow: 0 6px 20px rgba(245,165,36,.35);
+        }
+
+        /* tiny dot indicator */
+        .brand-form-page .bonus-row .upto::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: .35;
+        }
+
+        .brand-form-page .bonus-row .upto:has(input:checked)::before {
+            opacity: 1;
+        }
+
+/* ===============================
+   IMAGE UPLOAD CARD (PREMIUM)
+   =============================== */
+
+.brand-form-page .upload-card {
+    position: relative;
+    height: 140px;
+    border-radius: 20px;
+    border: 2px dashed rgba(255,255,255,.15);
+    background: radial-gradient(circle at top, #020617, #000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .25s ease;
+}
+
+    .brand-form-page .upload-card:hover {
+        border-color: #f5a524;
+        background: rgba(245,165,36,.05);
+    }
+
+.brand-form-page .upload-icon {
+    font-size: 32px;
+    opacity: .6;
+}
+
+.brand-form-page .upload-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #9ca3af;
+}
+
+.brand-form-page .upload-preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #020617;
+}
+
+.brand-form-page .upload-card.has-image {
+    border-style: solid;
+    border-color: rgba(245,165,36,.6);
+}
+
+    .brand-form-page .upload-card.has-image .upload-icon,
+    .brand-form-page .upload-card.has-image .upload-text {
+        display: none;
+    }
+
+/* 🔥 FIX: allow click through preview image */
+.brand-form-page .upload-preview {
+    pointer-events: none;
+}
+
+/* spacing between exclusive block and bonus rows */
+.brand-form-page .form-card > .form-grid + .bonus-row {
+    margin-top: 26px;
+}
+
+/* ================= INFO SYSTEM ================= */
+
+.label-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.info-trigger {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1f2937;
+    color: #f5a524;
+    font-size: 12px;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+    .info-trigger:hover {
+        background: #f5a524;
+        color: #000;
+    }
+
+.info-box {
+    position: absolute;
+    background: linear-gradient(180deg,#0f172a,#020617);
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    padding: 14px;
+    width: 280px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #e5e7eb;
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+    z-index: 999;
+    display: none;
+}
+
+    .info-box.active {
+        display: block;
+    }
+
+.field {
+    position: relative;
+}
+
+/* ================= INFO TOOLTIP CLICK ================= */
+
+.field {
+    position: relative;
+}
+
+.label-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-trigger {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1f2937;
+    color: #f5a524;
+    font-size: 11px;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+    .info-trigger:hover {
+        background: #f5a524;
+        color: #000;
+    }
+
+.info-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 6px;
+    background: #0f172a;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+    width: 260px;
+    line-height: 1.5;
+    color: #e5e7eb;
+    display: none;
+    z-index: 999;
+}
+
+    .info-box.active {
+        display: block;
+    }

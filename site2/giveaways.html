@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<title>7heGodFamilia | Giveaways</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/brands.css">
+<link rel="stylesheet" href="css/giveaways.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="home.html" class="logo">
+        7he<span>God</span>Familia
+    </a>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+    <nav id="mainNav">
+        <a href="home.html">Home</a>
+        <a href="brands.html">Brands</a>
+        <a href="giveaways.html" class="active">Giveaways</a>
+        <a href="highlights.html">Highlights</a>
+        <a href="rules.html">Rules</a>
+    </nav>
+</header>
+
+<div class="giveaways-page">
+
+  <section class="giveaways-hero">
+      <h1>BIG GIVEAWAYS</h1>
+
+      <p class="subtitle">
+        Επίσημοι διαγωνισμοί της Φαμίλιας · Μετρητά · Verified payouts
+      </p>
+
+      <p id="communityMessage" class="community-message">
+          Οι διαγωνισμοί της Φαμίλιας είναι ο τρόπος μας να ανταποδίδουμε τη στήριξή σας.
+          Σας ευχαριστούμε που χτίζουμε μαζί αυτή την κοινότητα.
+      </p>
+   </section>
+
+  <section id="activeGiveaway" class="active-giveaway" style="display:none;">
+    <div class="active-giveaway-inner"></div>
+  </section>
+
+  <section class="how-to-enter" style="display:none;">
+    <h2>Πώς Συμμετέχεις</h2>
+    <div class="steps">
+      <div class="step"><span>1</span>Κατάθεση από το link μας</div>
+      <div class="step"><span>2</span>Screenshot από το ιστορικό</div>
+      <div class="step"><span>3</span>Υποβολή συμμετοχής</div>
+    </div>
+  </section>
+
+  <section class="rules-section" style="display:none;">
+    <h3>Όροι & Προϋποθέσεις</h3>
+    <ul id="rulesList"></ul>
+  </section>
+
+  <section class="ended-giveaways">
+    <h2>Προηγούμενοι Διαγωνισμοί</h2>
+    <div id="endedGrid"></div>
+  </section>
+
+</div>
+
+<script src="js/giveaways.js"></script>
+</body>
+</html>

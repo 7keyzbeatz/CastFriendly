@@ -1,0 +1,949 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at top, #111827, #020617);
+    color: #e5e7eb;
+}
+
+/* TOPBAR */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(2,6,23,.75);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+    .logo span {
+        color: #f5a524;
+    }
+
+.topbar nav a {
+    margin-left: 20px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .topbar nav a:hover,
+    .topbar nav a.active {
+        color: #fff;
+    }
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 70vh;
+    max-height: 720px;
+    background: url("../img/logo-home-page-1024x912.png") center/110% no-repeat;
+    animation: hero-pan 20s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes hero-pan {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 55% 45%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(2,6,23,.95), rgba(2,6,23,.55));
+}
+
+.hero-content {
+    position: relative;
+    padding: 60px;
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+    .hero h1 span {
+        color: #f5a524;
+    }
+
+.hero p {
+    color: #cbd5f5;
+    line-height: 1.6;
+    margin: 16px 0 26px;
+}
+
+/* SOCIALS */
+.socials {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.soc {
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+}
+
+.twitch {
+    background: #9146ff;
+}
+
+.discord {
+    background: #5865f2;
+}
+
+.insta {
+    background: #e1306c;
+}
+
+.yt {
+    background: #ff0000;
+}
+
+.fb {
+    background: #1877f2;
+}
+
+.tt {
+    background: #000;
+}
+
+/* SECTION */
+.home-section {
+    padding: 90px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-card {
+    max-width: 900px;
+    width: 100%;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+}
+
+/* LIQUID STATS */
+.stats-liquid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+@media (max-width: 900px) {
+    .stats-liquid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.liquid-card {
+    position: relative;
+    height: 170px;
+    border-radius: 22px;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    box-shadow: inset 0 0 0 1px rgba(96,165,250,.2), 0 25px 60px rgba(0,0,0,.7);
+    overflow: hidden;
+}
+
+/* LIQUID */
+.liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    animation: fill 2.2s ease-out forwards;
+}
+
+/* GRADIENTS */
+[data-color="gold"] .liquid {
+    background: linear-gradient(180deg,#ffd966,#fbbf24,#f59e0b,#b45309);
+}
+
+[data-color="amber"] .liquid {
+    background: linear-gradient(180deg,#ffe29a,#fbbf24,#f59e0b,#92400e);
+}
+
+[data-color="orange"] .liquid {
+    background: linear-gradient(180deg,#ffd6a5,#fb923c,#f97316,#9a3412);
+}
+
+[data-color="deep"] .liquid {
+    background: linear-gradient(180deg,#fff3a3,#fde047,#facc15,#ca8a04);
+}
+
+/* WAVE */
+.liquid::before,
+.liquid::after {
+    content: "";
+    position: absolute;
+    top: -18px;
+    width: 200%;
+    height: 40px;
+    background: rgba(255,200,80,.25);
+    border-radius: 45%;
+    animation: wave 4s linear infinite;
+}
+
+.liquid::after {
+    animation-delay: -2s;
+    opacity: .2;
+}
+
+/* PERCENT */
+.liquid-percent {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    font-size: 18px;
+    font-weight: 900;
+    color: #020617;
+    background: rgba(255,215,100,.9);
+    padding: 4px 10px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.4);
+}
+
+/* LABEL */
+.stat-name {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #000080;
+}
+
+/* ANIMATIONS */
+@keyframes fill {
+    to {
+        height: var(--fill);
+    }
+}
+
+@keyframes wave {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* ===== WELCOME / MISSION ===== */
+
+.home-card.soft {
+    background: linear-gradient(180deg, #0b1220, #020617);
+}
+
+.home-card .lead {
+    font-size: 16px;
+    color: #cbd5f5;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.home-card h3 {
+    margin-top: 36px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #f5a524;
+}
+
+/* REASONS GRID */
+.reasons-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.reason-card {
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: inset 0 0 0 1px rgba(96,165,250,.2), 0 20px 40px rgba(0,0,0,.6);
+}
+
+    .reason-card h4 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        font-weight: 900;
+        color: #60a5fa;
+    }
+
+    .reason-card p {
+        margin: 0;
+        font-size: 14px;
+        color: #cbd5f5;
+        line-height: 1.6;
+    }
+
+/* CLOSING TEXT */
+.closing {
+    margin-top: 36px;
+    font-size: 15px;
+    color: #e5e7eb;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.music-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-btn {
+    background: rgba(255, 191, 0, 0.8); /* Χρυσό/Amber χρώμα όπως το theme σου */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+    .music-btn:hover {
+        transform: scale(1.1);
+    }
+
+/* Animation για όταν παίζει η μουσική */
+.playing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 191, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 191, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 191, 0, 0);
+    }
+}
+
+/* ===== TOPBAR MOBILE MENU ===== */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Desktop */
+.topbar nav {
+    display: flex;
+    gap: 26px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .topbar nav {
+            position: absolute;
+            top: 64px;
+            right: 16px;
+            background: rgba(2,6,23,.95);
+            border-radius: 16px;
+            padding: 16px 20px;
+            flex-direction: column;
+            gap: 14px;
+            display: none;
+            box-shadow: 0 20px 60px rgba(0,0,0,.6);
+            z-index: 999;
+        }
+
+            .topbar nav.open {
+                display: flex;
+            }
+
+            .topbar nav a {
+                font-size: 15px;
+                white-space: nowrap;
+            }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: auto;
+        min-height: 85dvh; /* σωστό mobile viewport */
+        background-size: cover; /* ΟΧΙ 110% */
+        background-position: center top;
+    }
+
+    .hero-content {
+        padding: 120px 24px 60px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+.liquid-card {
+    position: relative;
+    height: 170px;
+    border-radius: 22px;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    box-shadow: inset 0 0 0 1px rgba(96,165,250,.2), 0 25px 60px rgba(0,0,0,.7);
+    overflow: hidden;
+    transition: transform .4s ease, box-shadow .4s ease;
+    transform-style: preserve-3d;
+}
+
+    .liquid-card:hover {
+        transform: translateY(-10px) rotateX(6deg) rotateY(-6deg);
+        box-shadow: inset 0 0 0 1px rgba(96,165,250,.3), 0 35px 80px rgba(0,0,0,.9), 0 0 40px rgba(255,180,50,.4);
+    }
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    animation: fill 2.2s ease-out forwards, gradientShift 6s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.casino-balance {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.balance-item {
+    background: linear-gradient(145deg, #0b1220, #020617);
+    padding: 22px 26px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.7);
+    border: 1px solid rgba(255,215,100,.15);
+}
+
+.balance-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: .5px;
+}
+
+    .balance-header span:first-child {
+        color: #f5a524;
+    }
+
+.value {
+    color: #e5e7eb;
+}
+
+.balance-bar {
+    height: 14px;
+    background: #0f172a;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: inset 0 0 8px rgba(0,0,0,.8);
+}
+
+.balance-fill {
+    height: 100%;
+    border-radius: 999px;
+    position: relative;
+    animation: growBar 1.4s ease forwards;
+}
+
+    .balance-fill::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+        animation: shine 3s infinite;
+    }
+
+/* Colors */
+.gold {
+    background: linear-gradient(90deg,#ffd966,#fbbf24,#f59e0b);
+}
+
+.orange {
+    background: linear-gradient(90deg,#fb923c,#f97316,#ea580c);
+}
+
+.green {
+    background: linear-gradient(90deg,#34d399,#10b981,#059669);
+}
+
+.blue {
+    background: linear-gradient(90deg,#60a5fa,#3b82f6,#2563eb);
+}
+
+/* Animations */
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes shine {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(200%);
+    }
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #fff;
+}
+
+    .logo span {
+        color: #f5a524;
+    }
+
+/* ================= LIVE SECTION ================= */
+
+.live-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    animation: liveReveal .8s cubic-bezier(.16,1,.3,1);
+}
+
+@keyframes liveReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+.live-container {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(15,23,42,.6);
+    backdrop-filter: blur(14px);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 40px 120px rgba(0,0,0,.8), 0 0 60px rgba(245,165,36,.15);
+    text-align: center;
+}
+
+.live-header {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #f5a524;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.live-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dc2626;
+    animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220,38,38,.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(220,38,38,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(220,38,38,0);
+    }
+}
+
+.live-player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+}
+
+    .live-player-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/* SLOT MACHINE SECTION */
+.slot-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.slot-container {
+    background: linear-gradient(145deg, #0f172a, #020617);
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid #f5a524;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(245, 165, 36, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.slot-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+    .slot-title span {
+        color: #f5a524;
+    }
+
+.slot-machine {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    perspective: 1000px;
+}
+
+.reel {
+    width: 100px;
+    height: 120px;
+    background: #020617;
+    border: 3px solid #1e293b;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 20px #000;
+}
+
+/* Animation για το "τρέμουλο" του spin */
+.spinning {
+    animation: blurSpin 0.1s infinite linear;
+}
+
+@keyframes blurSpin {
+    0% {
+        transform: translateY(-10px);
+        filter: blur(2px);
+    }
+
+    50% {
+        transform: translateY(10px);
+        filter: blur(4px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+        filter: blur(2px);
+    }
+}
+
+.spin-button {
+    background: linear-gradient(180deg, #f5a524, #b45309);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(180, 83, 9, 0.4);
+}
+
+    .spin-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(180, 83, 9, 0.6);
+    }
+
+    .spin-button:disabled {
+        background: #4b5563;
+        cursor: not-allowed;
+    }
+
+.slot-message {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #cbd5f5;
+    min-height: 24px;
+}
+
+.reel-inner img {
+    width: 70px; /* Προσάρμοσέ το ανάλογα με το μέγεθος των reels σου */
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Εφέ λάμψης όταν κερδίζει */
+.win-flash {
+    animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0.8;
+        transform: scale(1.1);
+        filter: brightness(1.5);
+    }
+}
+
+/* Το reel λειτουργεί ως "παράθυρο" */
+.reel {
+    width: 100px;
+    height: 120px;
+    background: #020617;
+    border: 3px solid #1e293b;
+    border-radius: 15px;
+    overflow: hidden; /* Κρύβει τις υπόλοιπες εικόνες της λωρίδας */
+    position: relative;
+    box-shadow: inset 0 0 25px #000;
+}
+
+/* Η λωρίδα με τις εικόνες */
+.reel-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: transform 0.1s ease-out; /* Για το ομαλό σταμάτημα */
+}
+
+    .reel-inner img {
+        width: 70px;
+        height: 120px; /* Ίδιο ύψος με το reel για να κεντράρεται κάθε εικόνα */
+        padding: 20px 0;
+        object-fit: contain;
+    }
+
+/* Animation "τρεξίματος" */
+.spinning-fast {
+    animation: slide-up 0.1s linear infinite;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-240px);
+    }
+    /* Μετατόπιση κατά 2 εικόνες ύψος */
+}
+
+/* Εφέ αναπήδησης στο σταμάτημα */
+.bounce-stop {
+    animation: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Διόρθωση στο reel-inner για να χωράει τη λωρίδα */
+.reel-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0; /* Ξεκινάμε από κάτω */
+    width: 100%;
+}
+
+/* Animation για γρήγορο "τρέξιμο" */
+.spinning-fast {
+    animation: slide-scroll 0.1s linear infinite;
+}
+
+@keyframes slide-scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(120px); } /* Μετατόπιση κατά το ύψος ενός συμβόλου */
+}
+
+/* Εφέ αναπήδησης (Bounce) στο σταμάτημα */
+.bounce-stop {
+    animation: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes bounce-in {
+    0% { transform: translateY(-30px); filter: blur(2px); }
+    100% { transform: translateY(0); filter: blur(0); }
+}
+
+/* Flash για το Jackpot */
+.win-flash {
+    animation: win-glow 0.5s infinite alternate;
+    border-color: #f5a524 !important;
+}
+
+@keyframes win-glow {
+    from { box-shadow: inset 0 0 20px #000; }
+    to { box-shadow: inset 0 0 40px rgba(245, 165, 36, 0.8), 0 0 20px rgba(245, 165, 36, 0.5); }
+}
+
+.reel {
+    width: 110px;
+    height: 120px; /* Ίδιο ύψος με τις εικόνες στο JS */
+    background: #020617;
+    border: 3px solid #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 20px #000;
+}
+
+.spinning-fast {
+    animation: slide-scroll 0.1s linear infinite;
+}
+
+@keyframes slide-scroll {
+    /* Μετατόπιση κατά το ύψος μιας εικόνας (120px) */
+    100% {
+        transform: translateY(-120px);
+    }
+}
+
+.bounce-stop {
+    animation: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation για το "χάσιμο" */
+.shake-animation {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Flash εφέ για το Jackpot (παραμένει) */
+.win-flash {
+    animation: win-glow 0.5s infinite alternate;
+    border-color: #f5a524 !important;
+}
+
+@keyframes win-glow {
+    to { box-shadow: 0 0 30px #f5a524, inset 0 0 20px #f5a524; }
+}

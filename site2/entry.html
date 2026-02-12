@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<title>Υποβολή Συμμετοχής</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/submit.css">
+</head>
+<body>
+
+<div class="form-wrapper">
+
+    <button type="button" class="close-btn" onclick="goBack()"></button>
+
+    <h1>Υποβολή Συμμετοχής</h1>
+
+    <form action="submit_entry.php" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="giveaway_id" id="giveawayId">
+
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Casino</label>
+        <div class="select-wrapper">
+            <select name="casino" id="casinoSelect" required></select>
+        </div>
+
+        <label>Ποσό Κατάθεσης (€)</label>
+        <input type="number" name="deposit" id="depositInput" min="1" required>
+
+        <div id="entriesPreview" class="entries-preview"></div>
+
+        <label>Screenshot Κατάθεσης</label>
+        <input type="file" name="screenshot" accept="image/png,image/jpeg" required>
+
+        <button type="submit">ΥΠΟΒΟΛΗ</button>
+    </form>
+
+    <!-- ΟΔΗΓΙΕΣ -->
+    <div class="instructions">
+        <h3>Οδηγίες Συμμετοχής</h3>
+        <ul>
+            <li>Η κατάθεση πρέπει να έχει γίνει από δικό μας link.</li>
+            <li>Η φωτογραφία πρέπει να είναι από το ιστορικό λογαριασμού.</li>
+            <li>Η κατάθεση πρέπει να γίνει σε μία συναλλαγή.</li>
+            <li>Ελάχιστη συμμετοχή από 30€.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const giveawayId = params.get("giveaway");
+
+document.getElementById("giveawayId").value = giveawayId;
+
+let entriesTable = [];
+let minimumDeposit = 0;
+
+fetch("data/giveaways.json")
+.then(r => r.json())
+.then(data => {
+
+    const giveaway = data.giveaways.find(g => g.id === giveawayId);
+
+    if (!giveaway) {
+        alert("Giveaway not found");
+        return;
+    }
+
+    // Populate casinos
+    const select = document.getElementById("casinoSelect");
+    giveaway.casinos.forEach(casino => {
+        const opt = document.createElement("option");
+        opt.value = casino;
+        opt.textContent = casino;
+        select.appendChild(opt);
+    });
+
+    entriesTable = giveaway.entriesTable;
+
+    minimumDeposit = Math.min(...entriesTable.map(r => r.deposit));
+
+});
+
+document.getElementById("depositInput").addEventListener("input", function(){
+
+    const deposit = parseFloat(this.value) || 0;
+    let entries = 0;
+
+    entriesTable.forEach(rule => {
+        if (deposit >= rule.deposit) {
+            entries = rule.entries;
+        }
+    });
+
+    const preview = document.getElementById("entriesPreview");
+
+    if (deposit < minimumDeposit) {
+        preview.innerHTML = `
+            <div class="error">
+                Ελάχιστη κατάθεση: ${minimumDeposit}€
+            </div>
+        `;
+    } else {
+        preview.innerHTML = `
+            <div class="success">
+                Θα λάβεις <strong>${entries}</strong> συμμετοχές
+            </div>
+        `;
+    }
+
+});
+
+function goBack() {
+    if (document.referrer) {
+        history.back();
+    } else {
+        window.location.href = "../giveaways.html";
+    }
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        goBack();
+    }
+});
+
+</script>
+
+</body>
+</html>
